@@ -233,7 +233,7 @@ h3 { font-size: 1.35rem; line-height: 1.25; }
   gap: 14px;
   margin-top: 44px;
 }
-.hero-stats div, .glass-panel, .hero-card, .project-card, .experience-card, .award-card, .qualification-card, .language-card, .activity-marquee {
+.hero-stats div, .glass-panel, .hero-card, .project-card, .experience-card, .teaching-card, .award-card, .qualification-card, .language-card, .activity-marquee {
   border: 1px solid var(--line);
   background: linear-gradient(145deg, rgba(255,255,255,0.105), rgba(255,255,255,0.045));
   box-shadow: 0 20px 70px rgba(0,0,0,0.26);
@@ -250,7 +250,7 @@ h3 { font-size: 1.35rem; line-height: 1.25; }
   overflow: hidden;
   isolation: isolate;
 }
-.hero-card::after, .project-card::after, .award-card::after, .qualification-card::after, .language-card::after, .experience-card::after {
+.hero-card::after, .project-card::after, .award-card::after, .qualification-card::after, .language-card::after, .experience-card::after, .teaching-card::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -260,7 +260,7 @@ h3 { font-size: 1.35rem; line-height: 1.25; }
   transition: opacity .25s ease;
   pointer-events: none;
 }
-.hero-card:hover::after, .project-card:hover::after, .award-card:hover::after, .qualification-card:hover::after, .language-card:hover::after, .experience-card:hover::after { opacity: 1; }
+.hero-card:hover::after, .project-card:hover::after, .award-card:hover::after, .qualification-card:hover::after, .language-card:hover::after, .experience-card:hover::after, .teaching-card:hover::after { opacity: 1; }
 .hologram-ring {
   position: absolute;
   width: 210px;
@@ -331,7 +331,7 @@ h3 { font-size: 1.35rem; line-height: 1.25; }
 }
 
 .language-grid, .qualification-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.language-card, .qualification-card, .award-card, .project-card, .experience-card { position: relative; overflow: hidden; }
+.language-card, .qualification-card, .award-card, .project-card, .experience-card, .teaching-card { position: relative; overflow: hidden; }
 .language-card { border-radius: var(--radius); padding: 26px; min-height: 250px; }
 .featured-language { grid-column: span 2; background: linear-gradient(145deg, rgba(98,255,188,0.14), rgba(85,230,255,0.06)); }
 .language-icon {
@@ -363,7 +363,7 @@ h3 { font-size: 1.35rem; line-height: 1.25; }
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .project-card { border-radius: var(--radius); padding: 28px; min-height: 340px; transform-style: preserve-3d; transition: transform .25s ease, border-color .25s ease; }
 .project-card.featured { grid-column: 1 / -1; }
-.project-card:hover, .award-card:hover, .qualification-card:hover, .language-card:hover, .experience-card:hover { border-color: rgba(85,230,255,0.42); }
+.project-card:hover, .award-card:hover, .qualification-card:hover, .language-card:hover, .experience-card:hover, .teaching-card:hover { border-color: rgba(85,230,255,0.42); }
 .project-index { font-family: "JetBrains Mono", monospace; color: var(--pink); font-size: 0.9rem; margin-bottom: 18px; }
 .tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
 .note { font-size: 0.9rem; font-style: italic; }
@@ -490,4 +490,44 @@ h3 { font-size: 1.35rem; line-height: 1.25; }
 }
 @media (max-width: 720px) {
   .language-subgrid { grid-template-columns: 1fr; }
+}
+
+
+/* Latest CV additions: English coursework, teaching experience and expanded awards */
+.course-mini-card {
+  margin-top: 22px;
+  border-color: rgba(255, 211, 106, 0.28);
+  background: linear-gradient(145deg, rgba(255,211,106,0.10), rgba(0,0,0,0.18));
+}
+.course-mini-card strong { line-height: 1.45; }
+
+.teaching-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.teaching-card {
+  min-height: 285px;
+  padding: 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, rgba(255,255,255,0.105), rgba(255,255,255,0.045));
+  box-shadow: 0 20px 70px rgba(0,0,0,0.26);
+  backdrop-filter: blur(24px);
+  transition: transform .25s ease, border-color .25s ease;
+}
+.teaching-card:hover { transform: translateY(-4px); }
+.teaching-date {
+  margin-bottom: 16px;
+  color: var(--gold);
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 800;
+}
+.highlight-award {
+  border-color: rgba(255, 211, 106, 0.36);
+  background: linear-gradient(145deg, rgba(255,211,106,0.13), rgba(98,255,188,0.05));
+}
+
+@media (max-width: 1050px) {
+  .teaching-grid { grid-template-columns: 1fr; }
 }

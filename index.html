@@ -1,446 +1,400 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio website for Kelvin Li, Computer Science student specialising in AI, cybersecurity, XR, cloud, networking and full-stack development." />
-  <title>Kelvin Li | AI · Cybersecurity · XR Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Portfolio website for Kelvin Li, a Computer Science student specialising in AI, cybersecurity, Swift/SwiftUI, local and cloud AI, XR, cloud, networking and full-stack development." name="description"/>
+<title>Kelvin Li | AI · Cybersecurity · Swift · XR Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <canvas id="particle-canvas" aria-hidden="true"></canvas>
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <div class="scanline" aria-hidden="true"></div>
-  <div class="page-noise" aria-hidden="true"></div>
-
-  <header class="site-header">
-    <a class="logo magnetic" href="#home" aria-label="Kelvin Li home">
-      <span class="logo-mark">K</span>
-      <span>Kelvin Li</span>
-    </a>
-
-    <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="nav-menu" aria-label="Main navigation">
-      <a href="#about">Profile</a>
-      <a href="#languages">Languages</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#awards">Awards</a>
-      <a href="#qualifications">Qualifications</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="home" class="hero section-padding">
-      <div class="hero-orb orb-one"></div>
-      <div class="hero-orb orb-two"></div>
-      <div class="hero-orb orb-three"></div>
-
-      <div class="hero-content reveal">
-        <p class="eyebrow">Computer Science Student · AI & Cybersecurity R&D · XR Builder</p>
-        <h1>
+<canvas aria-hidden="true" id="particle-canvas"></canvas>
+<div aria-hidden="true" class="cursor-glow"></div>
+<div aria-hidden="true" class="scanline"></div>
+<div aria-hidden="true" class="page-noise"></div>
+<header class="site-header">
+<a aria-label="Kelvin Li home" class="logo magnetic" href="#home">
+<span class="logo-mark">K</span>
+<span>Kelvin Li</span>
+</a>
+<button aria-expanded="false" aria-label="Open navigation" class="nav-toggle">
+<span></span><span></span><span></span>
+</button>
+<nav aria-label="Main navigation" class="nav-menu"><a href="#about">Profile</a><a href="#languages">Languages</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#teaching">Teaching</a><a href="#awards">Awards</a><a href="#qualifications">Qualifications</a><a href="#contact">Contact</a></nav>
+</header>
+<main>
+<section class="hero section-padding" id="home">
+<div class="hero-orb orb-one"></div>
+<div class="hero-orb orb-two"></div>
+<div class="hero-orb orb-three"></div>
+<div class="hero-content reveal">
+<p class="eyebrow">Computer Science Student · AI &amp; Cybersecurity R&amp;D · Swift/XR Builder</p>
+<h1>
           Kelvin <span class="gradient-text">Li</span>
-        </h1>
-        <p class="hero-subtitle">
-          I build intelligent, secure and immersive digital experiences across AI chatbots, RAG systems,
-          3D Gaussian Splatting, XR/WebXR, cloud platforms, cybersecurity workflows and full-stack web applications.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary magnetic" href="#projects">Explore Projects</a>
-          <a class="btn btn-secondary magnetic" href="https://www.linkedin.com/in/kelvin-kt-li/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-
-        <div class="hero-stats" aria-label="Portfolio highlights">
-          <div><strong>AI</strong><span>LLM · RAG · STT/TTS · Voice Cloning</span></div>
-          <div><strong>XR</strong><span>3DGS · WebXR · ARKit · Vision Pro</span></div>
-          <div><strong>Cloud</strong><span>AWS · EC2 · S3 · EMR · CloudWatch</span></div>
-          <div><strong>Security</strong><span>SHA-256 · RSA/ECC · RBAC · Cisco</span></div>
-        </div>
-      </div>
-
-      <aside class="hero-card reveal delay-1" aria-label="Profile card">
-        <div class="hologram-ring"></div>
-        <div class="profile-avatar">KL</div>
-        <h2>Kelvin Li</h2>
-        <p>Computer Science Student</p>
-        <div class="status-pill"><span></span> Computer Science Student</div>
-        <ul class="profile-list">
-          <li><span>Portfolio</span><a href="https://www.linkedin.com/in/kelvin-kt-li/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
-        </ul>
-      </aside>
-    </section>
-
-    <section id="about" class="section-padding about-grid">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Profile</p>
-        <h2>Technology builder with a security-first mindset.</h2>
-      </div>
-      <div class="glass-panel reveal delay-1">
-        <p>
-          I am a Computer Science student at The Hong Kong Polytechnic University with hands-on experience in AI,
-          cybersecurity research and development, software engineering, cloud deployment, networking and immersive media.
-          My project portfolio covers AI-powered public service platforms, 3D Gaussian Splatting tourism systems,
-          secure enterprise IoT network design, and cloud-hosted e-commerce-style campus marketplace applications.
-        </p>
-        <div class="skill-cloud" aria-label="Skills">
-          <span>Python</span><span>TypeScript</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
-          <span>Node.js</span><span>Express</span><span>FastAPI</span><span>Flask</span><span>Java</span>
-          <span>Swift</span><span>ARKit</span><span>Three.js</span><span>WebGL</span><span>XR/WebXR</span>
-          <span>LLM</span><span>RAG</span><span>n8n</span><span>STT/TTS</span><span>Voice Cloning</span>
-          <span>TensorFlow</span><span>PyTorch</span><span>spaCy</span><span>AWS EC2</span><span>S3</span>
-          <span>CloudWatch</span><span>Apache Spark</span><span>EMR</span><span>SQLite</span><span>Nginx</span>
-          <span>SHA-256</span><span>RSA/ECC</span><span>Blockchain Audit Logging</span><span>Cisco</span><span>Windows Server</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="languages" class="section-padding">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Languages</p>
-        <h2>Communication across Cantonese, Putonghua and English.</h2>
-      </div>
-      <div class="language-grid refined-language-grid">
-        <article class="language-card reveal featured-language language-major">
-          <div class="language-icon">中</div>
-          <h3>Chinese</h3>
-          <p>Written Chinese, Cantonese spoken communication, and Putonghua spoken communication.</p>
-          <div class="language-subgrid">
-            <div class="language-mini-card">
-              <span class="language-mini-label">Cantonese</span>
-              <strong>Spoken communication</strong>
-              <small>Native / Fluent</small>
-            </div>
-            <div class="language-mini-card cert-mini-card">
-              <span class="language-mini-label">Putonghua</span>
-              <strong>PSC Grade Two, Level B 二級乙等</strong>
-              <small>Certificate of Proficiency in Putonghua (PSC) · The Hong Kong Polytechnic University and The State Language Commission · Attained in Feb 2026</small>
-            </div>
-          </div>
-        </article>
-        <article class="language-card reveal delay-1">
-          <div class="language-icon">EN</div>
-          <h3>English</h3>
-          <p>Spoken and written communication</p>
-          <span class="language-level">Professional working communication</span>
-        </article>
-      </div>
-    </section>
-
-    <section id="education" class="section-padding">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Education</p>
-        <h2>Academic foundation in Computer Science, IT, networking and information security.</h2>
-      </div>
-
-      <div class="timeline">
-        <article class="timeline-item reveal">
-          <span class="timeline-dot"></span>
-          <div class="glass-panel timeline-card">
-            <div class="card-topline">Sep 2024 – Present · Hong Kong</div>
-            <h3>The Hong Kong Polytechnic University</h3>
-            <p>BSc (Hons) in Computer Science</p>
-            <p class="muted"><strong>Final Year Project:</strong> <a href="https://youtu.be/zI8TUeQuifU" target="_blank" rel="noopener">Immersive Virtual Tourism with 3DGS and AI Digital Humans</a> · Grade A</p>
-          </div>
-        </article>
-
-        <article class="timeline-item reveal delay-1">
-          <span class="timeline-dot"></span>
-          <div class="glass-panel timeline-card">
-            <div class="card-topline">Sep 2022 – Aug 2024 · Hong Kong</div>
-            <h3>University of Hong Kong School of Professional and Continuing Education (HKU SPACE)</h3>
-            <p>Higher Diploma in Information Technology, major in Networking and Information Security Theme</p>
-            <ul class="compact-list">
-              <li>Cumulative GPA: 3.65</li>
-              <li>Honour / Classification: Distinction</li>
-              <li>Latest semester GPA: 3.92</li>
-              <li>Awards and Achievements: Student on Principal's Honour List (2023–2024)</li>
-              <li>Final Year Project: CyberConnect: Amplifying Eclipse Circuits' IoT Expansion · Grade A+</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" class="section-padding">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Projects</p>
-        <h2>Projects that combine AI, cloud, security, networking and immersive interaction.</h2>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card featured reveal">
-          <div class="project-index">01</div>
-          <h3><a href="https://youtu.be/zI8TUeQuifU" target="_blank" rel="noopener">Immersive Virtual Tourism with 3DGS and AI Digital Humans</a></h3>
-          <p class="project-meta">Final Year Project · Grade A</p>
-          <p>
+</h1>
+<p class="hero-subtitle">I build intelligent, secure and immersive digital experiences across provider-agnostic AI, private local models, RAG systems, Swift/SwiftUI, 3D Gaussian Splatting, XR/WebXR, cloud platforms, cybersecurity workflows and full-stack applications.</p>
+<div class="hero-actions">
+<a class="btn btn-primary magnetic" href="#projects">Explore Projects</a>
+<a class="btn btn-secondary magnetic" href="https://www.linkedin.com/in/kelvin-kt-li/" rel="noopener" target="_blank">LinkedIn</a>
+</div>
+<div aria-label="Portfolio highlights" class="hero-stats">
+<div><strong>AI</strong><span>LLM · RAG · Local Models · STT/TTS</span></div>
+<div><strong>Swift / XR</strong><span>SwiftUI · MLX · ARKit · Vision Pro</span></div>
+<div><strong>Cloud</strong><span>AWS · EC2 · S3 · EMR · CloudWatch</span></div>
+<div><strong>Security</strong><span>SHA-256 · RSA/ECC · RBAC · Cisco</span></div>
+</div>
+</div>
+<aside aria-label="Profile card" class="hero-card reveal delay-1">
+<div class="hologram-ring"></div>
+<div class="profile-avatar">KL</div>
+<h2>Kelvin Li</h2>
+<p>Computer Science Student</p>
+<div class="status-pill"><span></span> BSc (Hons) Computer Science · PolyU</div>
+<ul class="profile-list">
+<li><span>Portfolio</span><a href="https://www.linkedin.com/in/kelvin-kt-li/" rel="noopener" target="_blank">LinkedIn Profile</a></li>
+</ul>
+</aside>
+</section>
+<section class="section-padding about-grid" id="about">
+<div class="section-heading reveal">
+<p class="eyebrow">Profile</p>
+<h2>Technology builder combining AI, security, Swift and immersive computing.</h2>
+</div>
+<div class="glass-panel reveal delay-1">
+<p>I am a Computer Science student at The Hong Kong Polytechnic University with hands-on experience in AI, cybersecurity research and development, Swift/SwiftUI application engineering, cloud deployment, networking and immersive media. My work includes FerryX, a provider-agnostic family companionship and memory-care platform with private local AI; MemoSpace, an award-winning 3DGS and AI digital-human ecosystem; AI-powered public-service platforms; cloud-hosted web applications; and secure enterprise network design.</p>
+<div aria-label="Skills" class="skill-cloud"><span>Python</span><span>TypeScript</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Node.js</span><span>Express</span><span>FastAPI</span><span>Flask</span><span>Java</span><span>Swift</span><span>SwiftUI</span><span>MLX</span><span>ARKit</span><span>Vision Pro</span><span>Three.js</span><span>WebGL</span><span>XR/WebXR</span><span>LLM</span><span>RAG</span><span>BM25</span><span>STT/TTS</span><span>Voice Cloning</span><span>TensorFlow</span><span>PyTorch</span><span>spaCy</span><span>AWS EC2</span><span>S3</span><span>CloudWatch</span><span>Apache Spark</span><span>EMR</span><span>SQLite</span><span>Local Databases</span><span>Nginx</span><span>SHA-256</span><span>RSA/ECC</span><span>Blockchain Audit Logging</span><span>Cisco</span><span>Windows Server</span></div>
+</div>
+</section>
+<section class="section-padding" id="languages">
+<div class="section-heading reveal">
+<p class="eyebrow">Languages</p>
+<h2>Communication across Cantonese, Putonghua and English.</h2>
+</div>
+<div class="language-grid refined-language-grid">
+<article class="language-card reveal featured-language language-major">
+<div class="language-icon">中</div>
+<h3>Chinese</h3>
+<p>Written Chinese, Cantonese spoken communication, and Putonghua spoken communication.</p>
+<div class="language-subgrid">
+<div class="language-mini-card">
+<span class="language-mini-label">Cantonese</span>
+<strong>Spoken communication</strong>
+<small>Native / Fluent</small>
+</div>
+<div class="language-mini-card cert-mini-card">
+<span class="language-mini-label">Putonghua</span>
+<strong>PSC Grade Two, Level A 二級甲等</strong>
+<small>Certificate of Proficiency in Putonghua (PSC) · The Hong Kong Polytechnic University and The State Language Commission · Attained in Jun 2026</small>
+</div>
+</div>
+</article>
+<article class="language-card reveal delay-1"><div class="language-icon">EN</div><h3>English</h3><p>Spoken and written communication</p><span class="language-level">Professional working communication</span><div class="mini-cert course-mini-card"><strong>ELC3524 Professional Communication for Computing Students</strong><span>The Hong Kong Polytechnic University · Grade A−</span></div></article>
+</div>
+</section>
+<section class="section-padding" id="education">
+<div class="section-heading reveal">
+<p class="eyebrow">Education</p>
+<h2>Academic foundation in Computer Science, IT, networking and information security.</h2>
+</div>
+<div class="timeline">
+<article class="timeline-item reveal">
+<span class="timeline-dot"></span>
+<div class="glass-panel timeline-card">
+<div class="card-topline">Sep 2024 – Aug 2026 · Hong Kong</div>
+<h3>The Hong Kong Polytechnic University</h3>
+<p>BSc (Hons) in Computer Science</p>
+<p class="muted"><strong>Final Year Project:</strong> <a href="https://youtu.be/zI8TUeQuifU" rel="noopener" target="_blank">Immersive Virtual Tourism with 3DGS and AI Digital Humans</a> · Grade A</p>
+<p class="muted"><strong>Paper: </strong>Accepted as a Short Paper at APSCE TBICS on AI, MetaACES 2026</p></div>
+</article>
+<article class="timeline-item reveal delay-1">
+<span class="timeline-dot"></span>
+<div class="glass-panel timeline-card">
+<div class="card-topline">Sep 2022 – Aug 2024 · Hong Kong</div>
+<h3>University of Hong Kong School of Professional and Continuing Education (HKU SPACE)</h3>
+<p>Higher Diploma in Information Technology, major in Networking and Information Security Theme</p>
+<ul class="compact-list">
+<li>Cumulative GPA: 3.65</li>
+<li>Honour / Classification: Distinction</li>
+<li>Latest semester GPA: 3.92</li>
+<li>Awards and Achievements: Student on Principal's Honour List (2023–2024)</li>
+<li>Final Year Project: CyberConnect: Amplifying Eclipse Circuits' IoT Expansion · Grade A+</li>
+</ul>
+</div>
+</article>
+</div>
+</section>
+<section class="section-padding" id="projects">
+<div class="section-heading reveal">
+<p class="eyebrow">Projects</p>
+<h2>Projects that combine AI, cloud, security, networking and immersive interaction.</h2>
+</div>
+<div class="project-grid">
+<article class="project-card featured reveal">
+<div class="project-index">01</div>
+<h3><a href="https://youtu.be/zI8TUeQuifU" rel="noopener" target="_blank">Immersive Virtual Tourism with 3DGS and AI Digital Humans</a></h3>
+<p class="project-meta">Final Year Project · Grade A</p>
+<p>
             Led the development of MemoSpace, an end-to-end immersive memory preservation platform integrating
             3D Gaussian Splatting, XR/WebXR, and AI-driven digital humans. Independently built the MemoLens iOS
             AR-guided capture app using Swift and ARKit, developed MemoPortal, a Three.js/WebGL-based web platform
             for 3D point-cloud viewing, and contributed to the Apple Vision Pro immersive XR experience.
           </p>
-          <p>
+<p>
             Designed and implemented the MemoChat digital human module, combining LLM-based conversational AI,
             Retrieval-Augmented Generation (RAG), memory database, persona management, chatlog import, STT/TTS,
             voice cloning, lip-sync orchestration, and avatar-based storytelling to enable interactive,
             memory-grounded conversations. Managed system architecture, module integration, 3D scene data collection,
             and user evaluation.
           </p>
-          <p>
+<p>
             The project won China Collegiate Computing Contest Mobile Application Innovation Contest (MAIC)
-            <a href="https://www.polyu.edu.hk/comp/news-and-events/news/2025/0710_maic-2025/" target="_blank" rel="noopener">Hong Kong Regional Final Champion</a>,
-            <a href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_maic-2025-national-finals_nov25/" target="_blank" rel="noopener">National Final Second Prize</a>, and was accepted as a short paper at APSCE TBICS on AI, MetaACES 2026.
+            <a href="https://www.polyu.edu.hk/comp/news-and-events/news/2025/0710_maic-2025/" rel="noopener" target="_blank">Hong Kong Regional Final Champion</a>,
+            <a href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_maic-2025-national-finals_nov25/" rel="noopener" target="_blank">National Final Second Prize</a>, and was accepted as a short paper at APSCE TBICS on AI, MetaACES 2026.
           </p>
-          <div class="tags"><span>3DGS</span><span>XR/WebXR</span><span>Swift</span><span>ARKit</span><span>Three.js</span><span>WebGL</span><span>Vision Pro</span><span>LLM</span><span>RAG</span><span>STT/TTS</span><span>Voice Cloning</span><span>Lip-sync</span></div>
-        </article>
-
-        <article class="project-card reveal delay-1">
-          <div class="project-index">02</div>
-          <h3><a href="https://youtu.be/MFNWAjzndo0" target="_blank" rel="noopener">CampusTradeSphere</a></h3>
-          <p>
+<div class="tags"><span>3DGS</span><span>XR/WebXR</span><span>Swift</span><span>ARKit</span><span>Three.js</span><span>WebGL</span><span>Vision Pro</span><span>LLM</span><span>RAG</span><span>STT/TTS</span><span>Voice Cloning</span><span>Lip-sync</span></div>
+</article><article class="project-card reveal delay-1">
+<div class="project-index">02</div>
+<h3>FerryX | AI Family Companionship and Memory Care Platform</h3>
+<p>
+        Developed FerryX, a SwiftUI AI family companionship and memory-care app. Built a provider-agnostic AI layer
+        enabling users to connect external AI APIs or download app-provided lightweight local models for private/offline
+        use, with MLX, BM25/RAG, persona memories, chat-history import, STT/TTS, and local databases.
+      </p>
+<p>
+        Engineered backend services for provider routing, model management, memory retrieval, chat sessions, family
+        handover, reminders, low-pressure rewriting, summaries, consent controls, and the FerrySight Apple Vision Pro
+        experience. The project won the Best Apple Value Prize at the Hong Kong Regional Final of the China Collegiate
+        Computing Contest (Mobile Application Innovation Contest 2026).
+      </p>
+<div class="tags"><span>SwiftUI</span><span>MLX</span><span>Local AI</span><span>External AI APIs</span><span>BM25/RAG</span><span>Persona Memory</span><span>STT/TTS</span><span>Local Databases</span><span>Vision Pro</span><span>Privacy</span></div>
+</article>
+<article class="project-card reveal delay-2">
+<div class="project-index">03</div>
+<h3><a href="https://youtu.be/MFNWAjzndo0" rel="noopener" target="_blank">CampusTradeSphere</a></h3>
+<p>
             Developed and deployed CampusTradeSphere, a cloud-hosted e-commerce-style campus marketplace platform
             for student trading and rental workflows. Worked on frontend–backend integration, REST API implementation,
             backend services, SQLite database management, AWS deployment, and system verification using JavaScript,
             Node.js, Express, Python Flask, Nginx, AWS EC2, S3, CloudWatch, and Apache Spark on EMR.
           </p>
-          <p>
+<p>
             Implemented product listing, cart/checkout, sale and rental order workflows, and an admin analytics
             dashboard to visualise user activity, GMV, API latency, and live alerts, demonstrating hands-on experience
             in web application development, API integration, cloud-hosted services, data processing, and operational monitoring.
           </p>
-          <div class="tags"><span>E-commerce</span><span>REST API</span><span>Node.js</span><span>Express</span><span>Flask</span><span>AWS EC2</span><span>S3</span><span>CloudWatch</span><span>Apache Spark</span><span>EMR</span></div>
-        </article>
-
-        <article class="project-card reveal delay-2">
-          <div class="project-index">03</div>
-          <h3>HKAssist | AI-Powered Public Service Coordination Platform</h3>
-          <p>
+<div class="tags"><span>E-commerce</span><span>REST API</span><span>Node.js</span><span>Express</span><span>Flask</span><span>AWS EC2</span><span>S3</span><span>CloudWatch</span><span>Apache Spark</span><span>EMR</span></div>
+</article>
+<article class="project-card reveal delay-3">
+<div class="project-index">04</div>
+<h3>HKAssist | AI-Powered Public Service Coordination Platform</h3>
+<p>
             Led the development of HKAssist, an award-winning AI chatbot and city-level public service coordination
-            platform that received the <a href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_open-data-hackathon-2025_jan-2026/" target="_blank" rel="noopener">Best Innovation Award (Tertiary Stream) at the Open Data Hackathon 2025 (Smart Economy)</a>.
+            platform that received the <a href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_open-data-hackathon-2025_jan-2026/" rel="noopener" target="_blank">Best Innovation Award (Tertiary Stream) at the Open Data Hackathon 2025 (Smart Economy)</a>.
           </p>
-          <p>
+<p>
             Integrated LLM, RAG, n8n workflow automation, API orchestration, and 3D Gaussian Splatting (3DGS) to
             help citizens, SMEs, and visitors navigate cross-departmental public service procedures, including
             requirement identification, document preparation, task automation, progress tracking, and immersive 360° tourism experiences.
           </p>
-          <div class="tags"><span>AI Chatbot</span><span>LLM</span><span>RAG</span><span>n8n</span><span>API Orchestration</span><span>3DGS</span><span>Open Data</span></div>
-        </article>
-
-        <article class="project-card reveal delay-3">
-          <div class="project-index">04</div>
-          <h3>CyberConnect: Amplifying Eclipse Circuits' IoT Expansion</h3>
-          <p class="project-meta">Final Year Project · Team Leader · Grade A+</p>
-          <p>
+<div class="tags"><span>AI Chatbot</span><span>LLM</span><span>RAG</span><span>n8n</span><span>API Orchestration</span><span>3DGS</span><span>Open Data</span></div>
+</article>
+<article class="project-card reveal delay-4">
+<div class="project-index">05</div>
+<h3>CyberConnect: Amplifying Eclipse Circuits' IoT Expansion</h3>
+<p class="project-meta">Final Year Project · Team Leader · Grade A+</p>
+<p>
             Designed a secure, multi-region enterprise network covering Hong Kong, Shenzhen, Shanghai, and Beijing
             in a simulated academic project scenario. Led WAN/LAN planning, security, and server-side deployment.
           </p>
-          <ul class="compact-list">
-            <li>Server infrastructure: AD, DNS, Web/File servers, GPO</li>
-            <li>Physical network topologies for 4 sites</li>
-            <li>Workstation security configuration and RBAC</li>
-            <li>Departmental user count planning</li>
-            <li>Technologies: Cisco Catalyst 9500/9600, Windows Server 2016, CentOS, GPO, VLAN, NAT/PAT, OSPF</li>
-            <li>Produced 70+ page technical report; awarded A+</li>
-          </ul>
-          <p class="note">Company names are fictional and created for academic demonstration purposes. Region names are real and used only as part of a simulated project scenario.</p>
-          <div class="tags"><span>Cisco Catalyst</span><span>Windows Server</span><span>CentOS</span><span>GPO</span><span>VLAN</span><span>NAT/PAT</span><span>OSPF</span><span>RBAC</span></div>
-        </article>
-      </div>
-    </section>
+<ul class="compact-list">
+<li>Server infrastructure: AD, DNS, Web/File servers, GPO</li>
+<li>Physical network topologies for 4 sites</li>
+<li>Workstation security configuration and RBAC</li>
+<li>Departmental user count planning</li>
+<li>Technologies: Cisco Catalyst 9500/9600, Windows Server 2016, CentOS, GPO, VLAN, NAT/PAT, OSPF</li>
+<li>Produced 70+ page technical report; awarded A+</li>
+</ul>
+<p class="note">Company names are fictional and created for academic demonstration purposes. Region names are real and used only as part of a simulated project scenario.</p>
+<div class="tags"><span>Cisco Catalyst</span><span>Windows Server</span><span>CentOS</span><span>GPO</span><span>VLAN</span><span>NAT/PAT</span><span>OSPF</span><span>RBAC</span></div>
+</article>
+</div>
+</section>
+<section class="section-padding" id="experience">
+<div class="section-heading reveal">
+<p class="eyebrow">Work Experience</p>
+<h2>Hands-on development, research, customer service and team collaboration.</h2>
+</div>
+<div class="experience-stack">
+<article class="experience-card reveal">
+<div class="experience-date">Jan 2025 – Aug 2025</div>
+<div>
+<h3>AI and Cybersecurity R&amp;D Intern</h3>
+<p class="company">Feelings Group Limited · Hong Kong</p>
+<ul>
+<li>Worked across AI and cybersecurity research &amp; development, alongside software and web development. Focus areas included phishing detection, biometric identity verification, secure backend systems, and interactive internal tools.</li>
+<li>Conducted AI and cybersecurity-focused research and prototyping on identity verification systems, including digital signatures and blockchain-based audit logging.</li>
+<li>Developed phishing detection and scam analysis models using Python, TensorFlow, PyTorch, and spaCy.</li>
+<li>Designed and implemented software systems including backend services, APIs, and internal tools using TypeScript, Node.js, Java, Python, and FastAPI.</li>
+<li>Built user-facing components and dashboards with JavaScript, HTML, and CSS.</li>
+<li>Applied cybersecurity techniques such as SHA-256 hashing, RSA/ECC digital signatures, and secure identity validation workflows.</li>
+<li>Used SQLite for storing structured development data in local backend environments.</li>
+<li>Delivered live demos and technical walkthroughs to supervisors to communicate development progress.</li>
+<li>Collaborated in a small development team, contributing to software design, implementation, and debugging.</li>
+</ul>
+</div>
+</article>
+<article class="experience-card reveal delay-1">
+<div class="experience-date">Jun 2023 – Aug 2026</div>
+<div>
+<h3>Cast Member</h3>
+<p class="company">Hong Kong International Theme Park Ltd. · Hong Kong</p>
 
-    <section id="experience" class="section-padding">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Work Experience</p>
-        <h2>Hands-on development, research, customer service and team collaboration.</h2>
-      </div>
+</div>
+</article>
+<article class="experience-card reveal delay-2">
+<div class="experience-date">Jul 2019 – Nov 2023</div>
+<div>
+<h3>Barista</h3>
+<p class="company">McDonald's · Hong Kong</p>
 
-      <div class="experience-stack">
-        <article class="experience-card reveal">
-          <div class="experience-date">Jan 2025 – Aug 2025</div>
-          <div>
-            <h3>AI and Cybersecurity R&D Intern</h3>
-            <p class="company">Feelings Group Limited · Hong Kong</p>
-            <ul>
-              <li>Worked across AI and cybersecurity research & development, alongside software and web development. Focus areas included phishing detection, biometric identity verification, secure backend systems, and interactive internal tools.</li>
-              <li>Conducted AI and cybersecurity-focused research and prototyping on identity verification systems, including digital signatures and blockchain-based audit logging.</li>
-              <li>Developed phishing detection and scam analysis models using Python, TensorFlow, PyTorch, and spaCy.</li>
-              <li>Designed and implemented software systems including backend services, APIs, and internal tools using TypeScript, Node.js, Java, Python, and FastAPI.</li>
-              <li>Built user-facing components and dashboards with JavaScript, HTML, and CSS.</li>
-              <li>Applied cybersecurity techniques such as SHA-256 hashing, RSA/ECC digital signatures, and secure identity validation workflows.</li>
-              <li>Used SQLite for storing structured development data in local backend environments.</li>
-              <li>Delivered live demos and technical walkthroughs to supervisors to communicate development progress.</li>
-              <li>Collaborated in a small development team, contributing to software design, implementation, and debugging.</li>
-            </ul>
-          </div>
-        </article>
+</div>
+</article>
+</div>
+</section><section class="section-padding" id="teaching">
+<div class="section-heading reveal">
+<p class="eyebrow">Teaching &amp; Volunteering Experience</p>
+<h2>Supporting learners through Swift, FinTech and service-learning activities.</h2>
+</div>
+<div class="teaching-grid">
+<article class="teaching-card reveal">
+<div class="teaching-date">Jul 2026</div>
+<h3>Teaching Assistant — Swift App Development Summer Camp</h3>
+<p class="company">Invent Your Own Future × The Hong Kong Polytechnic University</p>
+<p>Supported a five-day Swift app development bootcamp for upper-primary and junior-secondary students.</p>
+</article>
+<article class="teaching-card reveal delay-1">
+<div class="teaching-date">Jul 2026</div>
+<h3>Teaching Assistant — FinTech &amp; Investment Banking Bootcamp</h3>
+<p class="company">Invent Your Own Future × The Hong Kong Polytechnic University</p>
+<p>Supported a five-day FinTech and investment banking bootcamp for upper-secondary students.</p>
+</article>
+<article class="teaching-card reveal delay-2">
+<div class="teaching-date">May 2026</div>
+<h3>Teaching Assistant — Service-Learning Project (COMP2S01)</h3>
+<p class="company">Department of Computing (COMP), The Hong Kong Polytechnic University</p>
+<p>Supported teaching and student activities for a university service-learning project.</p>
+</article>
+</div>
+</section>
+<section class="section-padding" id="awards">
+<div class="section-heading reveal">
+<p class="eyebrow">Awards &amp; Achievements</p>
+<h2>Competition results and recognitions.</h2>
+</div>
+<div class="award-grid large"><article class="award-card reveal highlight-award">
+<strong>HKSAR Government Talent Development Scholarship (2025/26)</strong>
+<ul><li>Recipient, Apr 2026</li><li>Issued by: Education Bureau, HKSAR Government</li></ul>
+</article><article class="award-card reveal delay-1">
+<strong>Digital &amp; Intelligent Soundscape Competition<br/><span>20th China Creative Challenges Contest</span></strong>
+<ul><li>Third Prize (National Final), Aug 2026</li><li>Issued by: China Higher Education Association &amp; CDEC Organising Committee</li></ul>
+</article><article class="award-card reveal delay-2">
+<strong>Metaverse + AI Contest</strong>
+<ul><li>1st Runner-up, Jul 2026</li><li>Issued by: Pao Yue-kong Library &amp; Department of Computing (COMP), The Hong Kong Polytechnic University</li></ul>
+</article><article class="award-card reveal delay-3">
+<strong>China Collegiate Computing Contest<br/><span>Mobile Application Innovation Contest 2026</span></strong>
+<ul><li>Best Apple Value Prize (Hong Kong Regional Final), Jul 2026</li><li>Issued by: Department of Computing (COMP), The Hong Kong Polytechnic University &amp; Computer Education Research Association of Chinese Universities</li></ul>
+</article><article class="award-card reveal delay-4">
+<strong>16th National E-commerce “Innovation, Creativity and Entrepreneurship” Competition for College Students<br/><span>“3Chuang”</span></strong>
+<ul><li>Second Prize (Provincial-Level), Jul 2026</li><li>Second Prize (University-Level), May 2026</li><li>Issued by: National 3Chuang Competition Organizing Committee</li></ul>
+</article><article class="award-card reveal">
+<strong>PolyU Ideation Funding Scheme (2025/26)</strong>
+<ul><li>Recipient, May 2026</li><li>Issued by: Knowledge Transfer and Entrepreneurship Office (KTEO), The Hong Kong Polytechnic University</li></ul>
+</article><article class="award-card reveal delay-1">
+<strong>China Collegiate Computing Contest<br/><span>Mobile Application Innovation Contest 2025</span></strong>
+<ul>
+<li><a href="https://www.polyu.edu.hk/comp/news-and-events/news/2025/0710_maic-2025/" rel="noopener" target="_blank">Champion (Hong Kong Regional Final), Jul 2025</a></li>
+<li><a href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_maic-2025-national-finals_nov25/" rel="noopener" target="_blank">Second Prize (National Final), Nov 2025</a></li>
+<li>Issued by: The Hong Kong Polytechnic University Department of Computing (PolyU COMP) &amp; iOS Club (Hong Kong Regional Final) / Computer Education Research Association of Chinese Universities (National Final)</li>
+</ul>
+<a class="btn btn-secondary mini-link-button magnetic" href="https://kelvinli24.github.io/memospaceweb/" rel="noopener" target="_blank">Visit MemoSpace Website</a>
+</article><article class="award-card reveal delay-2">
+<strong>Open Data Hackathon 2025</strong>
+<ul><li><a href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_open-data-hackathon-2025_jan-2026/" rel="noopener" target="_blank">Best Innovation Award — Tertiary Stream, Feb 2026</a></li><li>Issued by: HKtag — Hong Kong Technology Advancement Group</li></ul>
+</article><article class="award-card reveal delay-3">
+<strong>HKGCC Business Case Competition 2025/26</strong>
+<ul><li>2nd Runner-up — Towngas Track, Mar 2026</li><li>Issued by: HKGCC — Hong Kong General Chamber of Commerce</li></ul>
+</article><article class="award-card reveal delay-4">
+<strong>Global Game Jam 2026</strong>
+<ul><li>Certificate of Participation, Jan – Feb 2026</li><li>Issued by: GGJHK Committee</li></ul>
+</article><article class="award-card reveal">
+<strong>IoT Data Hackathon 2025</strong>
+<ul><li>Certificate of Participation, Apr 2025</li><li>Issued by: GS1 Hong Kong</li></ul>
+</article></div>
+</section>
+<section class="section-padding" id="qualifications">
+<div class="section-heading reveal">
+<p class="eyebrow">Professional Qualifications</p>
+<h2>Cloud, networking, security and aviation-related credentials.</h2>
+</div>
+<div class="qualification-grid">
+<article class="qualification-card reveal delay-1">
+<h3><a href="https://www.credly.com/badges/817fd1da-7b7f-4ccc-a6e6-e694f1ade629/public_url" rel="noopener" target="_blank">AWS Academy Graduate - AWS Academy Cloud Architecting</a></h3>
+<p>AWS · Attained in May 2024</p>
+</article>
+<article class="qualification-card reveal delay-2">
+<h3><a href="https://www.credly.com/badges/f820182d-c54e-4b95-8952-322698f37a26/public_url" rel="noopener" target="_blank">AWS Academy Graduate - AWS Academy Cloud Foundations</a></h3>
+<p>AWS · Attained in May 2024</p>
+</article>
+<article class="qualification-card reveal delay-3">
+<h3><a href="https://www.credly.com/badges/18cd0261-55a2-4cda-9cc4-c14db1d11e30/public_url" rel="noopener" target="_blank">CCNAv7: Introduction to Networks</a></h3>
+<p>Cisco · Attained in Jan 2023 · Merit</p>
+</article>
+<article class="qualification-card reveal delay-4">
+<h3><a href="https://www.credly.com/badges/d7d909f2-f648-435f-91b8-8cb29baf4d22/public_url" rel="noopener" target="_blank">CCNAv7: Switching, Routing, and Wireless Essentials</a></h3>
+<p>Cisco · Attained in May 2023 · Merit</p>
+</article>
+<article class="qualification-card reveal delay-1">
+<h3><a href="https://www.credly.com/badges/07cd4c4e-5e40-4a1f-88af-1771b9b79e70/public_url" rel="noopener" target="_blank">CCNAv7: Enterprise Networking, Security, and Automation</a></h3>
+<p>Cisco · Attained in May 2023 · Merit</p>
+</article>
+<article class="qualification-card reveal delay-2">
+<h3><a href="https://www.credly.com/badges/5f519469-22da-4e1d-b776-deb885923084/public_url" rel="noopener" target="_blank">Network Security</a></h3>
+<p>Cisco · Attained in May 2024 · Merit</p>
+</article>
+<article class="qualification-card reveal delay-3">
+<h3><a href="https://www.credly.com/badges/629c7563-2a4f-425c-8163-b89fe178e381/public_url" rel="noopener" target="_blank">Ethical Hacker</a></h3>
+<p>Cisco · Attained in Dec 2024</p>
+</article>
+<article class="qualification-card reveal delay-4">
+<h3>IoT Fundamentals: IoT Security (Cisco)</h3>
+<p>Attained in Jan 2024</p>
+</article>
+<article class="qualification-card reveal delay-1">
+<h3>Remote Pilot Certificate</h3>
+<p>Attained in Nov 2024</p>
+</article>
+</div>
+</section>
 
-        <article class="experience-card reveal delay-1">
-          <div class="experience-date">Jun 2023 – Present</div>
-          <div>
-            <h3>Cast Member</h3>
-            <p class="company">Hong Kong International Theme Park Ltd. · Hong Kong</p>
-            <ul>
-              <li>Customer Service Skills: Interacting with visitors from all over the world helped enhance communication skills and customer service abilities.</li>
-              <li>Teamwork: Disney emphasizes teamwork, and performers often need to collaborate with other Cast Members or departments, helping build skills in diverse team environments.</li>
-              <li>Time Management and Organizational Skills: Cast Members usually have tight schedules, requiring effective management of time and tasks.</li>
-              <li>Problem-Solving Skills: Facing unexpected situations requires quick reactions and practical problem solving, strengthening adaptability.</li>
-              <li>Cultural Sensitivity: Interacting with visitors from different cultural backgrounds increased cultural sensitivity and cross-cultural communication skills.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="experience-card reveal delay-2">
-          <div class="experience-date">Jul 2019 – Nov 2023</div>
-          <div>
-            <h3>Barista</h3>
-            <p class="company">McDonald's · Hong Kong</p>
-            <ul>
-              <li>Customer Service: Communicated with customers, understood their needs, and provided service in a fast-paced environment.</li>
-              <li>Time Management: Worked efficiently in busy daily operations to prepare drinks quickly and accurately.</li>
-              <li>Teamwork: Collaborated closely with colleagues during service and operational tasks.</li>
-              <li>Problem Solving: Handled challenges during work and improved adaptability.</li>
-              <li>Creativity and Innovation: Applied creativity through tasks such as latte art.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="awards" class="section-padding">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Awards & Achievements</p>
-        <h2>Competition results and recognitions.</h2>
-      </div>
-
-      <div class="award-grid large">
-        <article class="award-card reveal">
-          <strong>China Collegiate Computing Contest<br><span>Mobile Application Innovation Contest 2025</span></strong>
-          <ul>
-            <li><a href="https://www.polyu.edu.hk/comp/news-and-events/news/2025/0710_maic-2025/" target="_blank" rel="noopener">Champion (Hong Kong Regional Final), Jul 2025</a></li>
-            <li><a href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_maic-2025-national-finals_nov25/" target="_blank" rel="noopener">Second Prize (National Final), Nov 2025</a></li>
-            <li>Issued by: The Hong Kong Polytechnic University Department of Computing (PolyU COMP) & iOS Club / Computer Education Research Association of Chinese Universities</li>
-          </ul>
-          <a class="btn btn-secondary mini-link-button magnetic" href="https://kelvinli24.github.io/memospaceweb/" target="_blank" rel="noopener">Visit MemoSpace Website</a>
-        </article>
-        <article class="award-card reveal delay-1">
-          <strong>Open Data Hackathon 2025</strong>
-          <ul>
-            <li><a href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_open-data-hackathon-2025_jan-2026/" target="_blank" rel="noopener">Best Innovation Award — Tertiary Stream, Feb 2026</a></li>
-            <li>Issued by: HKtag — Hong Kong Technology Advancement Group</li>
-          </ul>
-        </article>
-        <article class="award-card reveal delay-2">
-          <strong>HKGCC Business Case Competition 2025/26</strong>
-          <ul>
-            <li>2nd Runner-up — Towngas Track, Mar 2026</li>
-            <li>Issued by: HKGCC — Hong Kong General Chamber of Commerce</li>
-          </ul>
-        </article>
-        <article class="award-card reveal delay-3">
-          <strong>Global Game Jam 2026</strong>
-          <ul>
-            <li>Certificate of Participation, Jan – Feb 2026</li>
-            <li>Issued by: GGJHK Committee</li>
-          </ul>
-        </article>
-        <article class="award-card reveal delay-4">
-          <strong>IoT Data Hackathon 2025</strong>
-          <ul>
-            <li>Certificate of Participation, Apr 2025</li>
-            <li>Issued by: GS1 Hong Kong</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="qualifications" class="section-padding">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Professional Qualifications</p>
-        <h2>Cloud, networking, security and aviation-related credentials.</h2>
-      </div>
-
-      <div class="qualification-grid">
-        <article class="qualification-card reveal delay-1">
-          <h3><a href="https://www.credly.com/badges/817fd1da-7b7f-4ccc-a6e6-e694f1ade629/public_url" target="_blank" rel="noopener">AWS Academy Graduate - AWS Academy Cloud Architecting</a></h3>
-          <p>AWS · Attained in May 2024</p>
-        </article>
-        <article class="qualification-card reveal delay-2">
-          <h3><a href="https://www.credly.com/badges/f820182d-c54e-4b95-8952-322698f37a26/public_url" target="_blank" rel="noopener">AWS Academy Graduate - AWS Academy Cloud Foundations</a></h3>
-          <p>AWS · Attained in May 2024</p>
-        </article>
-        <article class="qualification-card reveal delay-3">
-          <h3><a href="https://www.credly.com/badges/18cd0261-55a2-4cda-9cc4-c14db1d11e30/public_url" target="_blank" rel="noopener">CCNAv7: Introduction to Networks</a></h3>
-          <p>Cisco · Attained in Jan 2023 · Merit</p>
-        </article>
-        <article class="qualification-card reveal delay-4">
-          <h3><a href="https://www.credly.com/badges/d7d909f2-f648-435f-91b8-8cb29baf4d22/public_url" target="_blank" rel="noopener">CCNAv7: Switching, Routing, and Wireless Essentials</a></h3>
-          <p>Cisco · Attained in May 2023 · Merit</p>
-        </article>
-        <article class="qualification-card reveal delay-1">
-          <h3><a href="https://www.credly.com/badges/07cd4c4e-5e40-4a1f-88af-1771b9b79e70/public_url" target="_blank" rel="noopener">CCNAv7: Enterprise Networking, Security, and Automation</a></h3>
-          <p>Cisco · Attained in May 2023 · Merit</p>
-        </article>
-        <article class="qualification-card reveal delay-2">
-          <h3><a href="https://www.credly.com/badges/5f519469-22da-4e1d-b776-deb885923084/public_url" target="_blank" rel="noopener">Network Security</a></h3>
-          <p>Cisco · Attained in May 2024 · Merit</p>
-        </article>
-        <article class="qualification-card reveal delay-3">
-          <h3><a href="https://www.credly.com/badges/629c7563-2a4f-425c-8163-b89fe178e381/public_url" target="_blank" rel="noopener">Ethical Hacker</a></h3>
-          <p>Cisco · Attained in Dec 2024</p>
-        </article>
-        <article class="qualification-card reveal delay-4">
-          <h3>IoT Fundamentals: IoT Security (Cisco)</h3>
-          <p>Attained in Jan 2024</p>
-        </article>
-        <article class="qualification-card reveal delay-1">
-          <h3>Remote Pilot Certificate</h3>
-          <p>Attained in Nov 2024</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="activities" class="section-padding">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Extracurricular Activities</p>
-        <h2>Additional learning experiences at The Hong Kong Polytechnic University.</h2>
-      </div>
-      <div class="activity-marquee reveal" aria-label="Extracurricular activities">
-        <div class="activity-track">
-          <span>Unmanned Aerial System (UAS) - Practical Flying Techniques · Sep 2024 – Oct 2024</span>
-          <span>Japanese Beginners Level: The Numbers Game, Ready to go Japan · Feb 2025 – Apr 2025</span>
-          <span>Fun-learning Korean - Elementary Level · Jun 2025 – Jul 2025</span>
-          <span>Starry Sky in Hong Kong · Oct 2025 – Nov 2025</span>
-          <span>Japanese Intermediate Level: Adjectives for Life, Ready to Go to Japan · Feb 2026 – Mar 2026</span>
-          <span>Unmanned Aerial System (UAS) - Practical Flying Techniques · Sep 2024 – Oct 2024</span>
-          <span>Japanese Beginners Level: The Numbers Game, Ready to go Japan · Feb 2025 – Apr 2025</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section-padding contact-section">
-      <div class="glass-panel contact-card reveal">
-        <p class="eyebrow">Contact</p>
-        <h2>Let's build something intelligent, secure and unforgettable.</h2>
-        <p class="muted">Open to AI, cybersecurity, software engineering, cloud, XR and full-stack opportunities.</p>
-        <div class="contact-actions">
-          <a class="btn btn-primary magnetic" href="https://www.linkedin.com/in/kelvin-kt-li/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>© 2026 Kelvin Li.</p>
-  </footer>
-
-  <button class="back-to-top" aria-label="Back to top">↑</button>
-  <script src="script.js"></script>
+<section class="section-padding contact-section" id="contact">
+<div class="glass-panel contact-card reveal">
+<p class="eyebrow">Contact</p>
+<h2>Let's build something intelligent, secure and unforgettable.</h2>
+<p class="muted">Open to AI, cybersecurity, Swift/iOS, software engineering, cloud, XR and full-stack opportunities.</p>
+<div class="contact-actions">
+<a class="btn btn-primary magnetic" href="https://www.linkedin.com/in/kelvin-kt-li/" rel="noopener" target="_blank">LinkedIn</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<p>© 2026 Kelvin Li.</p>
+</footer>
+<button aria-label="Back to top" class="back-to-top">↑</button>
+<script src="script.js"></script>
 </body>
 </html>

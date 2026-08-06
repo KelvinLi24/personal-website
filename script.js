@@ -125,7 +125,7 @@ document.querySelector('.back-to-top').addEventListener('click', () => window.sc
 
 
 // Dynamic light-follow effect on cards.
-document.querySelectorAll('.hero-card, .project-card, .award-card, .qualification-card, .language-card, .experience-card').forEach((card) => {
+document.querySelectorAll('.hero-card, .project-card, .award-card, .qualification-card, .language-card, .experience-card, .teaching-card').forEach((card) => {
   card.addEventListener('pointermove', (event) => {
     const rect = card.getBoundingClientRect();
     const x = ((event.clientX - rect.left) / rect.width) * 100;
