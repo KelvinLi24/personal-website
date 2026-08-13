@@ -439,11 +439,24 @@
     const title = $('.post-heading span', shell.closest('.social-post'))?.textContent.trim() || 'Portfolio post';
     let current = 0;
 
+    // Touch devices briefly reveal the carousel arrows, then fade them away again.
+    // This mirrors a native mobile gallery: controls are discoverable without
+    // permanently covering the photo.
+    const touchGallery = window.matchMedia('(hover: none)').matches || window.matchMedia('(pointer: coarse)').matches;
+    let controlsTimer = 0;
+    const showTouchControls = (duration = 1800) => {
+      if (!touchGallery || images.length < 2) return;
+      shell.classList.add('controls-visible');
+      window.clearTimeout(controlsTimer);
+      controlsTimer = window.setTimeout(() => shell.classList.remove('controls-visible'), duration);
+    };
+
     const go = (index) => {
       current = (index + images.length) % images.length;
       $$('.gallery-slide', stage).forEach((slide, idx) => slide.classList.toggle('active', idx === current));
       if (dots) $$('button', dots).forEach((dot, idx) => dot.classList.toggle('active', idx === current));
       if (counter) counter.textContent = `${current + 1} / ${images.length}`;
+      showTouchControls(1500);
     };
 
     images.forEach((src, index) => {
@@ -474,8 +487,21 @@
     next?.addEventListener('click', () => go(current + 1));
     if (counter) counter.textContent = `1 / ${images.length}`;
 
+    // Show controls briefly when the gallery first becomes usable. Any later
+    // touch/swipe/navigation resets the timer, so the arrows never stay on top
+    // of the image indefinitely on phones and tablets.
+    if (touchGallery && images.length > 1) {
+      requestAnimationFrame(() => showTouchControls(1900));
+      shell.addEventListener('pointerdown', (event) => {
+        if (event.pointerType === 'touch' || event.pointerType === 'pen') showTouchControls(1800);
+      }, { passive: true });
+    }
+
     let touchStartX = null;
-    shell.addEventListener('touchstart', (event) => { touchStartX = event.touches[0]?.clientX ?? null; }, { passive: true });
+    shell.addEventListener('touchstart', (event) => {
+      touchStartX = event.touches[0]?.clientX ?? null;
+      showTouchControls(1800);
+    }, { passive: true });
     shell.addEventListener('touchend', (event) => {
       if (touchStartX === null || images.length < 2) return;
       const endX = event.changedTouches[0]?.clientX ?? touchStartX;
@@ -503,6 +529,22 @@
     if (event.target instanceof HTMLImageElement && event.target.closest('.media-shell, .lightbox')) {
       event.preventDefault();
     }
+  });
+
+  // Use a fixed-viewBox SVG for the large double-like heart. The text glyph
+  // used previously could render with a different aspect ratio on mobile fonts,
+  // making the heart look stretched during the scale animation.
+  $$('.double-like').forEach((pop) => {
+    if ($('svg', pop)) return;
+    pop.textContent = '';
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', 'M12 21.35 10.55 20.03C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z');
+    svg.appendChild(path);
+    pop.appendChild(svg);
   });
 
   // Like / save / comment / share interactions.

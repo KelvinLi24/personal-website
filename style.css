@@ -2559,3 +2559,114 @@ a.journey-stop:hover .journey-arrow { transform:translate(2px,-2px); }
 @media (prefers-reduced-motion: reduce) {
   .journey-bridge::before { animation:none; }
 }
+
+/* ===== v12: mobile gallery controls + distortion-free heart animation ===== */
+/* Keep post images visually neutral: tapping/swiping is gallery navigation, not zoom. */
+.gallery-slide img { cursor: default; }
+
+/* The large double-like heart is now an SVG with a fixed square viewBox. Animate
+   the heart itself instead of scaling the full-screen overlay, which prevents
+   mobile font/glyph stretching and aspect-ratio distortion. */
+.double-like {
+  transform: none !important;
+  font-size: 0 !important;
+  opacity: 0;
+}
+.double-like svg {
+  width: clamp(72px, 20vw, 104px);
+  height: clamp(72px, 20vw, 104px);
+  display: block;
+  fill: #fff;
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,.48));
+  transform: scale(.58);
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+.double-like.pop {
+  animation: v12DoubleLikeFade .74s ease both !important;
+}
+.double-like.pop svg {
+  animation: v12DoubleLikeHeart .74s cubic-bezier(.18,.82,.24,1) both;
+}
+@keyframes v12DoubleLikeFade {
+  0% { opacity: 0; }
+  17% { opacity: 1; }
+  72% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes v12DoubleLikeHeart {
+  0% { transform: scale(.58); }
+  23% { transform: scale(1.16); }
+  46% { transform: scale(.96); }
+  68% { transform: scale(1); }
+  100% { transform: scale(.88); }
+}
+
+/* Keep the toolbar heart perfectly centred while it pops as well. */
+.like-button svg {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  will-change: transform;
+}
+.like-button.liked svg {
+  animation: v12HeartPop .38s cubic-bezier(.2,.82,.22,1) !important;
+}
+@keyframes v12HeartPop {
+  0% { transform: scale(.72); }
+  58% { transform: scale(1.22); }
+  100% { transform: scale(1); }
+}
+
+/* Phones/tablets: arrows appear briefly, then fade away automatically. The old
+   mobile rule intentionally keeps display:grid; visibility is now controlled by
+   opacity/visibility so the fade feels smooth. */
+@media (hover: none), (pointer: coarse) {
+  .media-shell.multiple .gallery-nav {
+    display: grid !important;
+    opacity: 0 !important;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity .24s ease,
+      visibility 0s linear .24s,
+      background .18s ease,
+      border-color .18s ease !important;
+  }
+  .media-shell.multiple.controls-visible .gallery-nav {
+    opacity: 1 !important;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s !important;
+  }
+  .media-shell.multiple.controls-visible .gallery-prev {
+    animation: v12ArrowInLeft .24s ease both;
+  }
+  .media-shell.multiple.controls-visible .gallery-next {
+    animation: v12ArrowInRight .24s ease both;
+  }
+  @keyframes v12ArrowInLeft {
+    from { opacity: 0; transform: translateY(-50%) translateX(-6px); }
+    to { opacity: 1; transform: translateY(-50%) translateX(0); }
+  }
+  @keyframes v12ArrowInRight {
+    from { opacity: 0; transform: translateY(-50%) translateX(6px); }
+    to { opacity: 1; transform: translateY(-50%) translateX(0); }
+  }
+}
+
+@media (max-width: 620px) {
+  .double-like svg {
+    width: clamp(68px, 23vw, 92px);
+    height: clamp(68px, 23vw, 92px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .double-like.pop,
+  .double-like.pop svg,
+  .like-button.liked svg,
+  .media-shell.multiple.controls-visible .gallery-prev,
+  .media-shell.multiple.controls-visible .gallery-next {
+    animation: none !important;
+  }
+}
