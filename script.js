@@ -361,7 +361,10 @@
   });
 
   // Numbered galleries: 1.jpg / 2.png / 3.webp ...
-  const extensions = ['jpg', 'jpeg', 'png', 'webp', 'avif', 'gif'];
+  // Accept both lower- and upper-case extensions because photos exported from
+  // cameras/phones commonly arrive as .JPG or .PNG. This keeps every post,
+  // including the TBICS paper post, on the exact same gallery loader.
+  const extensions = ['jpg', 'jpeg', 'png', 'webp', 'avif', 'gif', 'JPG', 'JPEG', 'PNG', 'WEBP', 'AVIF', 'GIF'];
   const tryImage = (base, number) => new Promise((resolve) => {
     let extensionIndex = 0;
     const probe = () => {
@@ -420,11 +423,13 @@
     if (!folder || !stage) return;
 
     const images = [];
-    for (let number = 1; number <= maxImages; number += 1) {
-      const src = await tryImage(folder, number);
-      if (!src) break;
-      images.push(src);
-    }
+    // Probe the whole numbered range instead of stopping at the first missing
+    // number. A missing 2.jpg should not prevent 3.jpg / 4.jpg from appearing.
+    // Promise.all also prevents one gallery from feeling slower than another.
+    const numberedSources = await Promise.all(
+      Array.from({ length: maxImages }, (_, index) => tryImage(folder, index + 1))
+    );
+    numberedSources.forEach((src) => { if (src) images.push(src); });
     if (!images.length) return;
 
     shell.classList.add('has-images');
