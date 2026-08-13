@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "strategy": "responsive-webp-lqip",
+  "images": [
+    {
+      "id": 1,
+      "width": 1269,
+      "height": 713,
+      "placeholder": "data:image/webp;base64,UklGRloBAABXRUJQVlA4IE4BAAAwCQCdASooABcAPwF0r1GrJqQiqqoBYCAJZAC7BbB2jFu0THtHiN8A5HAyw7nGUe0rdpT2318iGV9Fs3trjDEFSWyHtgt06IsIrATyvry5AjIAAP3NrajPBMhpAekyD/xaAXcS9eFIkBakvDlilnSytNmIuhkU1JG5lEle5ZmIi/oZIbTnhTqrYKjPUbEcInjTelioND2Z7Ja+PHM/oc+QZ0dxDucKxw9IInpsrC3ZajJz103ft1KRjS6xbMoH/oz4TiLqYRcmaddXgWN9AKl1zNKDi80C9l+WRVcpJ7WClI5/R2N2psDA2OyF4pc0DAcdffWTnZdSf5J1RjBMhBon+3URl/OJ1bNA3QttKYqftYgcG4CBmfcDpJHJhVr7q1gi5lFnTHs+uBF+pBfPy/D/ini98FfW6bF1YITttcbWG53x73ONGWrnbh0/FAAA",
+      "sources": [
+        {
+          "width": 640,
+          "src": "1-640.webp"
+        },
+        {
+          "width": 1269,
+          "src": "1-1269.webp"
+        }
+      ],
+      "fallback": "1-1269.webp"
+    }
+  ]
+}

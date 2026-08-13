@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "strategy": "responsive-webp-lqip",
+  "images": [
+    {
+      "id": 1,
+      "width": 1280,
+      "height": 719,
+      "placeholder": "data:image/webp;base64,UklGRp4BAABXRUJQVlA4IJIBAAAQCgCdASooABYAPwFysFKrJqSiqqgBYCAJZACy+8JO02o24CUMGMVgNbXwbKXHXdD13Y/5sKRhWzXjYtOSOI1j2q7PsBl08QvI3l2QLjYAUdt/1GS8t/VDmAD98vW+98nwhjd51o8Nb+SCMrG6sVTjA7cxFj9gM1/w47ttWReR0+B0g+YdQAAod0fMO4pQUel32ZW4erR/wa/CQKDoLj2+7YAZO8mAKn7gRxQ1Q9kmyVWiaGbYSC+cIRQ14iv65xYF5DBteoxjKNVn3pHwx8/LgbpcBCXlxVpMqGd1beccZQB+whFMCTJxTyWHiYjF4DE/SaBIxIZ/c/8/KbL6KkqdWzAD0BEAOMLJNNHcynO4ikPCF2xeAmCapCCFqcysYF2vUsP/qesr2oNzCMJOV2+7uFW0VsEC5jSSw0f+dWH+g2LobkIYJrNqz7fTY1e6P1RKqRZ6zQCbv52qDsuPoukHoK4l9mxf9fN8h2r2uTO2jlImQiDQz3PGdnAEqJ7AyK9XuH2w9xNcWYigsf4rW+aAAAA=",
+      "sources": [
+        {
+          "width": 640,
+          "src": "1-640.webp"
+        },
+        {
+          "width": 1280,
+          "src": "1-1280.webp"
+        }
+      ],
+      "fallback": "1-1280.webp"
+    }
+  ]
+}

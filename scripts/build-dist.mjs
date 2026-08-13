@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '..');
 const dist = path.join(root, 'dist');
-const galleryRoots = new Set(['featured', 'projects', 'teaching-volunteering', 'yunnan-service-learning']);
+const galleryRoots = new Set(['featured', 'projects', 'teaching-volunteering', 'yunnan-service-learning', 'newspaper']);
 
 async function exists(target) {
   try { await fs.access(target); return true; } catch { return false; }
