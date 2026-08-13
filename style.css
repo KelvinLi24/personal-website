@@ -2670,3 +2670,15 @@ a.journey-stop:hover .journey-arrow { transform:translate(2px,-2px); }
     animation: none !important;
   }
 }
+
+/* ===== v13: single-image mobile gallery guard =====
+   A post with only one loaded image has no navigation destination, so its
+   previous/next controls must stay hidden on every breakpoint, including the
+   legacy max-width rule that otherwise forces gallery buttons to display. */
+.media-shell.has-images:not(.multiple) .gallery-nav,
+.media-shell:not(.multiple) .gallery-nav {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

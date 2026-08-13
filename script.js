@@ -433,7 +433,17 @@
     if (!images.length) return;
 
     shell.classList.add('has-images');
-    if (images.length > 1) shell.classList.add('multiple');
+    shell.classList.toggle('multiple', images.length > 1);
+    [prev, next].forEach((control) => {
+      if (!control) return;
+      if (images.length > 1) {
+        control.removeAttribute('aria-hidden');
+        control.removeAttribute('tabindex');
+      } else {
+        control.setAttribute('aria-hidden', 'true');
+        control.setAttribute('tabindex', '-1');
+      }
+    });
     stage.innerHTML = '';
     if (dots) dots.innerHTML = '';
     const title = $('.post-heading span', shell.closest('.social-post'))?.textContent.trim() || 'Portfolio post';
