@@ -42,15 +42,35 @@
   // Navigation.
   const navToggle = $('.nav-toggle');
   const navMenu = $('.nav-menu');
-  navToggle?.addEventListener('click', () => {
-    const open = !navMenu?.classList.contains('open');
+  const setMobileNavOpen = (open) => {
     navMenu?.classList.toggle('open', open);
-    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle?.setAttribute('aria-expanded', String(open));
+    navToggle?.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  };
+
+  navToggle?.addEventListener('click', () => {
+    setMobileNavOpen(!navMenu?.classList.contains('open'));
   });
   $$('.nav-menu a').forEach((link) => link.addEventListener('click', () => {
-    navMenu?.classList.remove('open');
-    navToggle?.setAttribute('aria-expanded', 'false');
+    setMobileNavOpen(false);
   }));
+
+  // Close the mobile menu when the user taps outside it, presses Escape, or
+  // returns to a desktop layout. This keeps the hamburger state in sync.
+  document.addEventListener('click', (event) => {
+    if (!navMenu?.classList.contains('open')) return;
+    if (navMenu.contains(event.target) || navToggle?.contains(event.target)) return;
+    setMobileNavOpen(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navMenu?.classList.contains('open')) {
+      setMobileNavOpen(false);
+      navToggle?.focus();
+    }
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 880 && navMenu?.classList.contains('open')) setMobileNavOpen(false);
+  }, { passive:true });
 
   const allSectionLinks = [...$$('.nav-menu a'), ...$$('.sidebar-links a')];
   const sectionIds = [...new Set(allSectionLinks.map((a) => a.getAttribute('href')).filter((href) => href?.startsWith('#')))];

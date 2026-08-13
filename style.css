@@ -3334,3 +3334,140 @@ a.journey-stop:hover .journey-arrow { transform:translate(2px,-2px); }
 .coverage-window-card.post-expanded::after {
   display: none;
 }
+
+/* ===== v20: complete mobile navigation ===== */
+/* Keep the compact desktop header unchanged; these destinations are exposed
+   through the fixed sidebar on wide screens and the full hamburger menu on mobile. */
+.nav-menu .mobile-nav-only { display:none; }
+
+@media (max-width: 880px) {
+  .site-header { overflow:visible; }
+
+  .nav-toggle {
+    position:relative;
+    z-index:3;
+    display:block;
+    flex:0 0 42px;
+    cursor:pointer;
+    transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+  }
+  .nav-toggle:hover,
+  .nav-toggle[aria-expanded="true"] {
+    border-color:rgba(121,230,239,.24);
+    background:rgba(121,230,239,.08);
+    box-shadow:0 0 0 4px rgba(121,230,239,.035), inset 0 1px rgba(255,255,255,.06);
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform:translateY(5.5px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity:0; transform:scaleX(.35); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform:translateY(-5.5px) rotate(-45deg); }
+
+  .nav-menu {
+    position:absolute;
+    top:calc(100% + 9px);
+    left:0;
+    right:0;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:4px;
+    max-height:min(72dvh,620px);
+    padding:12px;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    visibility:hidden;
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(-8px) scale(.985);
+    transform-origin:top center;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    background:linear-gradient(165deg,rgba(17,23,34,.985),rgba(7,11,17,.985));
+    box-shadow:0 26px 70px rgba(0,0,0,.55), inset 0 1px rgba(255,255,255,.05);
+    backdrop-filter:blur(26px) saturate(130%);
+    -webkit-backdrop-filter:blur(26px) saturate(130%);
+    transition:opacity .2s ease,transform .22s cubic-bezier(.2,.8,.2,1),visibility .2s ease;
+  }
+  .nav-menu::before {
+    content:"Navigate";
+    display:block;
+    padding:3px 10px 7px;
+    color:#77879b;
+    font-family:"JetBrains Mono",monospace;
+    font-size:.58rem;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .nav-menu.open {
+    display:flex;
+    visibility:visible;
+    opacity:1;
+    pointer-events:auto;
+    transform:none;
+  }
+  .nav-menu .mobile-nav-only { display:grid; }
+  .nav-menu a,
+  .nav-menu a.mobile-nav-only {
+    position:relative;
+    display:grid;
+    grid-template-columns:34px minmax(0,1fr) 18px;
+    align-items:center;
+    min-height:44px;
+    padding:9px 11px;
+    border:1px solid transparent;
+    border-radius:12px;
+    color:#aeb8c8;
+    font-size:.78rem;
+    font-weight:650;
+    line-height:1.25;
+    transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease;
+  }
+  .nav-menu a::before {
+    content:attr(data-nav-index);
+    color:#627289;
+    font-family:"JetBrains Mono",monospace;
+    font-size:.58rem;
+    font-weight:700;
+    letter-spacing:.03em;
+  }
+  .nav-menu a::after {
+    content:"›";
+    justify-self:end;
+    color:#55667c;
+    font-size:1.05rem;
+    line-height:1;
+    transition:transform .18s ease,color .18s ease;
+  }
+  .nav-menu a:hover,
+  .nav-menu a.active {
+    color:#f7fbff;
+    border-color:rgba(121,230,239,.14);
+    background:linear-gradient(90deg,rgba(121,230,239,.095),rgba(133,168,255,.045));
+    transform:translateX(2px);
+  }
+  .nav-menu a.active {
+    box-shadow:inset 3px 0 0 rgba(121,230,239,.76);
+  }
+  .nav-menu a:hover::before,
+  .nav-menu a.active::before,
+  .nav-menu a:hover::after,
+  .nav-menu a.active::after { color:#82eaf1; }
+  .nav-menu a:hover::after { transform:translateX(2px); }
+
+  .nav-menu::-webkit-scrollbar { width:5px; }
+  .nav-menu::-webkit-scrollbar-thumb { background:rgba(255,255,255,.13); border-radius:999px; }
+}
+
+@media (max-width: 620px) {
+  .nav-menu {
+    max-height:calc(100dvh - 88px);
+    padding:10px;
+    border-radius:16px;
+  }
+  .nav-menu a,
+  .nav-menu a.mobile-nav-only {
+    min-height:42px;
+    padding:8px 10px;
+    font-size:.76rem;
+  }
+}
