@@ -360,24 +360,39 @@
     });
   });
 
-  // Numbered galleries: 1.jpg / 2.png / 3.webp ...
-  // Accept both lower- and upper-case extensions because photos exported from
-  // cameras/phones commonly arrive as .JPG or .PNG. This keeps every post,
-  // including the TBICS paper post, on the exact same gallery loader.
-  const extensions = ['jpg', 'jpeg', 'png', 'webp', 'avif', 'gif', 'JPG', 'JPEG', 'PNG', 'WEBP', 'AVIF', 'GIF'];
-  const tryImage = (base, number) => new Promise((resolve) => {
-    let extensionIndex = 0;
-    const probe = () => {
-      if (extensionIndex >= extensions.length) return resolve(null);
-      const src = `${base}/${number}.${extensions[extensionIndex++]}`;
-      const image = new Image();
-      image.decoding = 'async';
-      image.onload = () => resolve(src);
-      image.onerror = probe;
-      image.src = src;
-    };
-    probe();
-  });
+  // Optimized manifest-based galleries.
+  // Each gallery now loads one small images.json file generated during the image build,
+  // instead of probing dozens of possible filenames and extensions over the network.
+  const galleryManifestCache = new Map();
+
+  const ensureGalleryLoader = (stage) => {
+    let loader = $('.gallery-loader', stage);
+    if (loader) return loader;
+    loader = document.createElement('div');
+    loader.className = 'gallery-loader';
+    loader.setAttribute('role', 'status');
+    loader.setAttribute('aria-label', 'Loading photos');
+    loader.innerHTML = '<span class="gallery-loader-ring"></span><span class="gallery-loader-orbit"></span><span class="gallery-loader-sheen"></span>';
+    stage.appendChild(loader);
+    return loader;
+  };
+
+  const loadGalleryManifest = async (folder, force = false) => {
+    if (!force && galleryManifestCache.has(folder)) return galleryManifestCache.get(folder);
+    const request = fetch(`${folder}/images.json`, { cache: force ? 'reload' : 'default' })
+      .then(async (response) => {
+        if (!response.ok) throw new Error(`Gallery manifest unavailable: ${response.status}`);
+        const manifest = await response.json();
+        return Array.isArray(manifest?.images) ? manifest.images : [];
+      });
+    galleryManifestCache.set(folder, request);
+    try {
+      return await request;
+    } catch (error) {
+      galleryManifestCache.delete(folder);
+      throw error;
+    }
+  };
 
   const lightboxImage = $('.lightbox img');
   const lightboxCaption = $('.lightbox-caption');
@@ -412,122 +427,266 @@
   lightboxNext?.addEventListener('click', () => setLightbox((lightboxState?.index ?? 0) + 1));
 
   const galleryControllers = new WeakMap();
-  async function setupGallery(shell) {
-    const folder = shell.dataset.folder;
-    const maxImages = Math.max(1, Math.min(60, Number(shell.dataset.maxImages) || 30));
-    const stage = $('.gallery-stage', shell);
-    const dots = $('.carousel-dots', shell.closest('.social-post'));
-    const counter = $('.gallery-counter', shell);
-    const prev = $('.gallery-prev', shell);
-    const next = $('.gallery-next', shell);
-    if (!folder || !stage) return;
+  const gallerySetupPromises = new WeakMap();
 
-    const images = [];
-    // Probe the whole numbered range instead of stopping at the first missing
-    // number. A missing 2.jpg should not prevent 3.jpg / 4.jpg from appearing.
-    // Promise.all also prevents one gallery from feeling slower than another.
-    const numberedSources = await Promise.all(
-      Array.from({ length: maxImages }, (_, index) => tryImage(folder, index + 1))
-    );
-    numberedSources.forEach((src) => { if (src) images.push(src); });
-    if (!images.length) return;
-
-    shell.classList.add('has-images');
-    shell.classList.toggle('multiple', images.length > 1);
-    [prev, next].forEach((control) => {
-      if (!control) return;
-      if (images.length > 1) {
-        control.removeAttribute('aria-hidden');
-        control.removeAttribute('tabindex');
-      } else {
-        control.setAttribute('aria-hidden', 'true');
-        control.setAttribute('tabindex', '-1');
-      }
-    });
-    stage.innerHTML = '';
-    if (dots) dots.innerHTML = '';
-    const title = $('.post-heading span', shell.closest('.social-post'))?.textContent.trim() || 'Portfolio post';
-    let current = 0;
-
-    // Touch devices briefly reveal the carousel arrows, then fade them away again.
-    // This mirrors a native mobile gallery: controls are discoverable without
-    // permanently covering the photo.
-    const touchGallery = window.matchMedia('(hover: none)').matches || window.matchMedia('(pointer: coarse)').matches;
-    let controlsTimer = 0;
-    const showTouchControls = (duration = 1800) => {
-      if (!touchGallery || images.length < 2) return;
-      shell.classList.add('controls-visible');
-      window.clearTimeout(controlsTimer);
-      controlsTimer = window.setTimeout(() => shell.classList.remove('controls-visible'), duration);
-    };
-
-    const go = (index) => {
-      current = (index + images.length) % images.length;
-      $$('.gallery-slide', stage).forEach((slide, idx) => slide.classList.toggle('active', idx === current));
-      if (dots) $$('button', dots).forEach((dot, idx) => dot.classList.toggle('active', idx === current));
-      if (counter) counter.textContent = `${current + 1} / ${images.length}`;
-      showTouchControls(1500);
-    };
-
-    images.forEach((src, index) => {
-      const slide = document.createElement('div');
-      slide.className = `gallery-slide${index === 0 ? ' active' : ''}`;
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = `${title} — photo ${index + 1}`;
-      img.loading = index === 0 ? 'eager' : 'lazy';
-      img.decoding = 'async';
-      img.draggable = false;
-      img.addEventListener('dragstart', (event) => event.preventDefault());
-      img.addEventListener('contextmenu', (event) => event.preventDefault());
-      slide.appendChild(img);
-      stage.appendChild(slide);
-
-      if (dots && images.length > 1) {
-        const dot = document.createElement('button');
-        dot.type = 'button';
-        dot.className = index === 0 ? 'active' : '';
-        dot.setAttribute('aria-label', `Show photo ${index + 1}`);
-        dot.addEventListener('click', () => go(index));
-        dots.appendChild(dot);
-      }
-    });
-
-    prev?.addEventListener('click', () => go(current - 1));
-    next?.addEventListener('click', () => go(current + 1));
-    if (counter) counter.textContent = `1 / ${images.length}`;
-
-    // Show controls briefly when the gallery first becomes usable. Any later
-    // touch/swipe/navigation resets the timer, so the arrows never stay on top
-    // of the image indefinitely on phones and tablets.
-    if (touchGallery && images.length > 1) {
-      requestAnimationFrame(() => showTouchControls(1900));
-      shell.addEventListener('pointerdown', (event) => {
-        if (event.pointerType === 'touch' || event.pointerType === 'pen') showTouchControls(1800);
-      }, { passive: true });
+  const normalizeGalleryImage = (item, index, folder) => {
+    if (typeof item === 'string') {
+      return {
+        id: index + 1,
+        placeholder: '',
+        sources: [{ width: 1280, src: `${folder}/${item}` }],
+        fallback: `${folder}/${item}`
+      };
     }
 
-    let touchStartX = null;
-    shell.addEventListener('touchstart', (event) => {
-      touchStartX = event.touches[0]?.clientX ?? null;
-      showTouchControls(1800);
-    }, { passive: true });
-    shell.addEventListener('touchend', (event) => {
-      if (touchStartX === null || images.length < 2) return;
-      const endX = event.changedTouches[0]?.clientX ?? touchStartX;
-      const delta = endX - touchStartX;
-      if (Math.abs(delta) > 42) go(current + (delta < 0 ? 1 : -1));
-      touchStartX = null;
-    }, { passive: true });
+    const rawSources = Array.isArray(item?.sources) ? item.sources : [];
+    const sources = rawSources
+      .filter((source) => source?.src)
+      .map((source) => ({
+        width: Math.max(1, Number(source.width) || 1280),
+        src: `${folder}/${source.src}`
+      }))
+      .sort((a, b) => a.width - b.width);
 
-    shell.addEventListener('keydown', (event) => {
-      if (event.key === 'ArrowRight') { event.preventDefault(); go(current + 1); }
-      if (event.key === 'ArrowLeft') { event.preventDefault(); go(current - 1); }
-    });
+    if (!sources.length && item?.src) {
+      sources.push({ width: Math.max(1, Number(item.width) || 1280), src: `${folder}/${item.src}` });
+    }
 
-    galleryControllers.set(shell, { images, go, current: () => current, title });
+    const fallbackName = item?.fallback;
+    const fallback = fallbackName ? `${folder}/${fallbackName}` : (sources.at(-1)?.src || '');
+    return {
+      id: item?.id ?? index + 1,
+      width: Number(item?.width) || 0,
+      height: Number(item?.height) || 0,
+      placeholder: typeof item?.placeholder === 'string' ? item.placeholder : '',
+      sources,
+      fallback
+    };
+  };
+
+  async function setupGallery(shell, force = false) {
+    if (shell.dataset.galleryReady === 'true' && !force) return galleryControllers.get(shell);
+    if (gallerySetupPromises.has(shell) && !force) return gallerySetupPromises.get(shell);
+
+    const setupPromise = (async () => {
+      const folder = shell.dataset.folder;
+      const stage = $('.gallery-stage', shell);
+      const dots = $('.carousel-dots', shell.closest('.social-post'));
+      const counter = $('.gallery-counter', shell);
+      const prev = $('.gallery-prev', shell);
+      const next = $('.gallery-next', shell);
+      if (!folder || !stage) return null;
+
+      shell.classList.add('is-loading');
+      shell.setAttribute('aria-busy', 'true');
+      ensureGalleryLoader(stage);
+      [prev, next].forEach((control) => {
+        if (!control) return;
+        control.setAttribute('aria-hidden', 'true');
+        control.setAttribute('tabindex', '-1');
+      });
+
+      let manifestImages;
+      try {
+        manifestImages = await loadGalleryManifest(folder, force);
+      } catch (error) {
+        shell.dataset.galleryState = 'waiting';
+        // Keep the animated loader instead of showing a static missing-image state.
+        // A short retry also handles slow GitHub Pages/CDN propagation gracefully.
+        if (!shell.dataset.galleryRetryScheduled) {
+          shell.dataset.galleryRetryScheduled = 'true';
+          window.setTimeout(() => {
+            delete shell.dataset.galleryRetryScheduled;
+            setupGallery(shell, true).catch(() => {});
+          }, 4500);
+        }
+        return null;
+      }
+
+      const images = manifestImages
+        .map((item, index) => normalizeGalleryImage(item, index, folder))
+        .filter((item) => item.fallback || item.sources.length);
+
+      if (!images.length) {
+        shell.dataset.galleryState = 'waiting';
+        shell.classList.remove('has-images', 'multiple', 'controls-visible', 'gallery-ready');
+        shell.setAttribute('aria-busy', 'true');
+        if (dots) dots.innerHTML = '';
+        if (counter) counter.textContent = '';
+        // The loader intentionally remains animated. There is no static
+        // "no images detected" or "photos coming soon" placeholder.
+        return null;
+      }
+
+      shell.dataset.galleryState = 'ready';
+      shell.dataset.galleryReady = 'true';
+      shell.classList.add('has-images');
+      shell.classList.toggle('multiple', images.length > 1);
+      [prev, next].forEach((control) => {
+        if (!control) return;
+        if (images.length > 1) {
+          control.removeAttribute('aria-hidden');
+          control.removeAttribute('tabindex');
+        } else {
+          control.setAttribute('aria-hidden', 'true');
+          control.setAttribute('tabindex', '-1');
+        }
+      });
+
+      const loader = ensureGalleryLoader(stage);
+      $$('.gallery-slide', stage).forEach((slide) => slide.remove());
+      if (dots) dots.innerHTML = '';
+      const title = $('.post-heading span', shell.closest('.social-post'))?.textContent.trim() || 'Portfolio post';
+      let current = 0;
+
+      const touchGallery = window.matchMedia('(hover: none)').matches || window.matchMedia('(pointer: coarse)').matches;
+      let controlsTimer = 0;
+      const showTouchControls = (duration = 1800) => {
+        if (!touchGallery || images.length < 2) return;
+        shell.classList.add('controls-visible');
+        window.clearTimeout(controlsTimer);
+        controlsTimer = window.setTimeout(() => shell.classList.remove('controls-visible'), duration);
+      };
+
+      const slides = images.map((imageData, index) => {
+        const slide = document.createElement('div');
+        slide.className = `gallery-slide${index === 0 ? ' active' : ''}`;
+
+        const blur = document.createElement('div');
+        blur.className = 'gallery-blur-preview';
+        if (imageData.placeholder) blur.style.backgroundImage = `url("${imageData.placeholder}")`;
+        slide.appendChild(blur);
+
+        const img = document.createElement('img');
+        img.alt = `${title} — photo ${index + 1}`;
+        img.decoding = 'async';
+        img.draggable = false;
+        img.dataset.loadState = 'idle';
+        img.addEventListener('dragstart', (event) => event.preventDefault());
+        img.addEventListener('contextmenu', (event) => event.preventDefault());
+        img.addEventListener('load', () => {
+          img.dataset.loadState = 'loaded';
+          slide.classList.add('image-ready');
+          if (index === 0) {
+            shell.classList.add('gallery-ready');
+            shell.classList.remove('is-loading');
+            shell.setAttribute('aria-busy', 'false');
+            window.setTimeout(() => loader.remove(), 380);
+          }
+        });
+        img.addEventListener('error', () => {
+          img.dataset.loadState = 'error';
+          slide.classList.add('image-error');
+        });
+        slide.appendChild(img);
+        stage.insertBefore(slide, loader);
+
+        if (dots && images.length > 1) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = index === 0 ? 'active' : '';
+          dot.setAttribute('aria-label', `Show photo ${index + 1}`);
+          dot.addEventListener('click', () => go(index));
+          dots.appendChild(dot);
+        }
+        return { slide, img, imageData };
+      });
+
+      const ensureLoaded = (index, highPriority = false) => {
+        const normalizedIndex = (index + images.length) % images.length;
+        const entry = slides[normalizedIndex];
+        if (!entry || entry.img.dataset.loadState !== 'idle') return;
+        const { img, imageData } = entry;
+        img.dataset.loadState = 'loading';
+        // A src is only assigned to the active image and its next neighbour, so
+        // using eager here guarantees that the one deliberate prefetch actually starts.
+        img.loading = 'eager';
+        try { img.fetchPriority = highPriority ? 'high' : 'low'; } catch (_) {}
+        if (imageData.sources.length > 1) {
+          img.srcset = imageData.sources.map((source) => `${source.src} ${source.width}w`).join(', ');
+          img.sizes = '(max-width: 768px) 100vw, (max-width: 1499px) 86vw, 900px';
+        }
+        img.src = imageData.fallback || imageData.sources.at(-1)?.src || imageData.sources[0]?.src;
+      };
+
+      function go(index) {
+        current = (index + images.length) % images.length;
+        slides.forEach(({ slide }, idx) => slide.classList.toggle('active', idx === current));
+        if (dots) $$('button', dots).forEach((dot, idx) => dot.classList.toggle('active', idx === current));
+        if (counter) counter.textContent = `${current + 1} / ${images.length}`;
+        ensureLoaded(current, true);
+        if (images.length > 1) ensureLoaded(current + 1, false);
+        showTouchControls(1500);
+      }
+
+      prev?.addEventListener('click', () => go(current - 1));
+      next?.addEventListener('click', () => go(current + 1));
+      if (counter) counter.textContent = `1 / ${images.length}`;
+
+      // Only the first image is requested immediately. The next image is then
+      // prefetched, so a long carousel does not download every photo at once.
+      ensureLoaded(0, true);
+      if (images.length > 1) ensureLoaded(1, false);
+
+      if (touchGallery && images.length > 1) {
+        requestAnimationFrame(() => showTouchControls(1900));
+        shell.addEventListener('pointerdown', (event) => {
+          if (event.pointerType === 'touch' || event.pointerType === 'pen') showTouchControls(1800);
+        }, { passive: true });
+      }
+
+      let touchStartX = null;
+      shell.addEventListener('touchstart', (event) => {
+        touchStartX = event.touches[0]?.clientX ?? null;
+        showTouchControls(1800);
+      }, { passive: true });
+      shell.addEventListener('touchend', (event) => {
+        if (touchStartX === null || images.length < 2) return;
+        const endX = event.changedTouches[0]?.clientX ?? touchStartX;
+        const delta = endX - touchStartX;
+        if (Math.abs(delta) > 42) go(current + (delta < 0 ? 1 : -1));
+        touchStartX = null;
+      }, { passive: true });
+
+      shell.addEventListener('keydown', (event) => {
+        if (images.length < 2) return;
+        if (event.key === 'ArrowRight') { event.preventDefault(); go(current + 1); }
+        if (event.key === 'ArrowLeft') { event.preventDefault(); go(current - 1); }
+      });
+
+      const fullImages = images.map((item) => item.fallback || item.sources.at(-1)?.src).filter(Boolean);
+      const controller = { images: fullImages, go, current: () => current, title };
+      galleryControllers.set(shell, controller);
+      return controller;
+    })();
+
+    gallerySetupPromises.set(shell, setupPromise);
+    try {
+      return await setupPromise;
+    } finally {
+      gallerySetupPromises.delete(shell);
+    }
   }
-  $$('.media-shell').forEach(setupGallery);
+
+  const galleryShells = $$('.media-shell');
+  if ('IntersectionObserver' in window) {
+    const galleryObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+        setupGallery(entry.target).catch(() => {});
+      });
+    }, { rootMargin: '900px 0px', threshold: 0.01 });
+    galleryShells.forEach((shell) => galleryObserver.observe(shell));
+  } else {
+    galleryShells.forEach((shell) => setupGallery(shell).catch(() => {}));
+  }
+
+  window.addEventListener('online', () => {
+    galleryShells.forEach((shell) => {
+      if (shell.dataset.galleryReady !== 'true') setupGallery(shell, true).catch(() => {});
+    });
+  });
 
   // Deter casual image saving and dragging from post media.
   document.addEventListener('contextmenu', (event) => {

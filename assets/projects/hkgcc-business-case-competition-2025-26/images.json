@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "strategy": "responsive-webp-lqip",
+  "images": [
+    {
+      "id": 1,
+      "width": 1280,
+      "height": 853,
+      "placeholder": "data:image/webp;base64,UklGRoQBAABXRUJQVlA4IHgBAACQCACdASooABsAPv1qqU8rJiOiNVgIAWAfiUAZeu1+9QQcYCqWe3tv9PVRlScV5uIMS7BuZK9XJFxWI3FkzGxCJbm9uDz6b1EKZkxMkAD+YO5QK3cq6cPtFT0yfk23m0Eu/Y11oDNthD1YN9SVMdi2x7Jr4VM40zbQmV1vTP7apEwR6BpQmp5f7I+F8zLom1yJBR8N3DcXU4yDQcfdIbtISYH/yvd9x+AkVymJ/EC0SjOGRet/Csm9fDrVm5jyxEF82mDKoB7mD0vhZh1fESNA+AqOPW5PFtPMcXTTlG7SGxe5ZBxc+MBwYoxFHPL19nV5QAfkkOBO6GMKt3zZ+NPrw8vnLxfQjz9fRLxcP/MQmee8icJGfAR2BBtCG+zB8anKta7LZbxzgOy1zm3w6GTLRzDQXg/mBj9VVvbYaPlvTciB56fiCmS0glaoYHOSFPrr52YH+E2/kZKOnNAVAj6Iif2nuy0AS1rInJHrPxrFaZ7znCfLqQAA",
+      "sources": [
+        {
+          "width": 640,
+          "src": "1-640.webp"
+        },
+        {
+          "width": 1280,
+          "src": "1-1280.webp"
+        }
+      ],
+      "fallback": "1-1280.webp"
+    }
+  ]
+}

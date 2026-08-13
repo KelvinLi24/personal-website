@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "strategy": "responsive-webp-lqip",
+  "images": [
+    {
+      "id": 1,
+      "width": 1280,
+      "height": 720,
+      "placeholder": "data:image/webp;base64,UklGRgoBAABXRUJQVlA4IP4AAABwCACdASooABYAPwF2rFIrJ6OiqrgMAWAgCUAVxDYuMCtu9agaEdu8zpT55XflAa3dODs5/oTC8fj1iOWwQxGJrj0nR+QT9v0pJOGAAP7soqt9vBjvoPC+NPRiNiH3MKtiFi1zRW+lLidAPwY8TuN6UywVu6wg7AlASy+J9tuG5TD9uGgpzMafvTm1+AGLzvn7dquTgg6vuD0JvGqoUv8AKsWyssrVhi7r58lKwvO9iZH9mSTgS5GoAAuGQMxsqnsGi5MyaOtBV+qZrwPKM7icFFFrKYdy1rnHU4RMlY3S55ZxOxuz8T48/009I5SX2vIO3GkR3+ND7Ct/shwAAA==",
+      "sources": [
+        {
+          "width": 640,
+          "src": "1-640.webp"
+        },
+        {
+          "width": 1280,
+          "src": "1-1280.webp"
+        }
+      ],
+      "fallback": "1-1280.webp"
+    }
+  ]
+}

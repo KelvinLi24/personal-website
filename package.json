@@ -1,0 +1,13 @@
+{
+  "name": "kelvin-li-personal-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "images": "node scripts/optimize-images.mjs",
+    "build": "npm run images && node scripts/build-dist.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.0"
+  }
+}
