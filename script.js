@@ -579,7 +579,7 @@
     if (email) {
       const subject = encodeURIComponent(`Kelvin Li — ${title}`);
       const body = encodeURIComponent(`${title}\n\n${url}`);
-      email.href = `mailto:kelvin@gmail.com?subject=${subject}&body=${body}`;
+      email.href = `mailto:kelvinli.kt@gmail.com?subject=${subject}&body=${body}`;
     }
     openModal(shareSheet, trigger);
   };
@@ -604,7 +604,7 @@
   const contactCopyButton = $('.contact-copy-email-card');
   contactCopyButton?.addEventListener('click', async (event) => {
     const button = event.currentTarget;
-    await copyText('kelvin@gmail.com');
+    await copyText('kelvinli.kt@gmail.com');
     const icon = $('.contact-method-icon', button);
     const small = $('.contact-method-copy small', button);
     const strong = $('.contact-method-copy strong', button);
@@ -617,7 +617,7 @@
     if (icon) icon.innerHTML = '<svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg>';
     if (small) small.textContent = 'Copied';
     if (strong) strong.textContent = 'Email copied';
-    if (meta) meta.textContent = 'kelvin@gmail.com';
+    if (meta) meta.textContent = 'kelvinli.kt@gmail.com';
     if (indicator) indicator.textContent = '✓';
     window.clearTimeout(button._copyResetTimer);
     button._copyResetTimer = window.setTimeout(() => {
@@ -625,7 +625,7 @@
       if (icon) icon.innerHTML = '<svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg>';
       if (small) small.textContent = 'Quick action';
       if (strong) strong.textContent = 'Copy email';
-      if (meta) meta.textContent = 'kelvin@gmail.com';
+      if (meta) meta.textContent = 'kelvinli.kt@gmail.com';
       if (indicator) indicator.textContent = '⌘C';
     }, 1650);
     showToast('Email address copied');
@@ -647,7 +647,7 @@
 
   $('.share-copy-email')?.addEventListener('click', async (event) => {
     const button = event.currentTarget;
-    await copyText('kelvin@gmail.com');
+    await copyText('kelvinli.kt@gmail.com');
     animateCopySuccess(button, {
       defaultIcon: '@',
       defaultLabel: 'Copy email address',
