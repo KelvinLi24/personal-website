@@ -4,397 +4,1234 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Portfolio website for Kelvin Li, a Computer Science student specialising in AI, cybersecurity, Swift/SwiftUI, local and cloud AI, XR, cloud, networking and full-stack development." name="description"/>
-<title>Kelvin Li | AI · Cybersecurity · Swift · XR Portfolio</title>
+<meta content="Kelvin Li — Computer Science student portfolio featuring AI, cybersecurity, immersive computing, project competition highlights, teaching and volunteering experience." name="description"/>
+<meta content="#070a10" name="theme-color"/>
+<title>Kelvin Li | Personal Portfolio</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="assets/icon.png" rel="icon" type="image/png"/><link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-<canvas aria-hidden="true" id="particle-canvas"></canvas>
-<div aria-hidden="true" class="cursor-glow"></div>
-<div aria-hidden="true" class="scanline"></div>
-<div aria-hidden="true" class="page-noise"></div>
-<header class="site-header">
-<a aria-label="Kelvin Li home" class="logo magnetic" href="#home">
-<span class="logo-mark">K</span>
-<span>Kelvin Li</span>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div aria-hidden="true" class="grain"></div>
+<div aria-hidden="true" class="scroll-progress"><span></span></div><aside aria-label="Section navigation" class="sidebar-nav">
+<a aria-label="Kelvin Li home" class="sidebar-brand" href="#home">
+<span class="sidebar-brand-mark avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></span>
+<span><strong>Kelvin Li</strong><small>Portfolio</small></span>
 </a>
-<button aria-expanded="false" aria-label="Open navigation" class="nav-toggle">
+<div class="sidebar-divider"></div>
+<p class="sidebar-label">Navigate</p>
+<nav class="sidebar-links">
+<a href="#home"><span class="sidebar-index">01</span><span>Home</span></a>
+<a href="#education"><span class="sidebar-index">02</span><span>Education</span></a>
+<a href="#featured"><span class="sidebar-index">03</span><span>Featured</span></a>
+<a href="#projects"><span class="sidebar-index">04</span><span>Projects</span></a>
+<a href="#experience"><span class="sidebar-index">05</span><span>Experience</span></a>
+<a href="#teaching"><span class="sidebar-index">06</span><span>Teaching &amp; Volunteering</span></a>
+<a href="#yunnan-service-learning"><span class="sidebar-index">07</span><span>Yunnan Service-Learning</span></a>
+<a href="#languages"><span class="sidebar-index">08</span><span>Languages</span></a>
+<a href="#awards"><span class="sidebar-index">09</span><span>Awards</span></a>
+<a href="#qualifications"><span class="sidebar-index">10</span><span>Qualifications</span></a>
+<a href="#extracurricular"><span class="sidebar-index">11</span><span>Extracurricular Activities</span></a>
+<a href="#contact"><span class="sidebar-index">12</span><span>Contact</span></a>
+</nav>
+</aside>
+<header class="site-header">
+<a aria-label="Kelvin Li home" class="brand magnetic" href="#home">
+<span class="brand-mark avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">K</span></span>
+<span class="brand-copy"><strong>Kelvin Li</strong><small>Computer Science Student</small></span>
+</a>
+<button aria-expanded="false" aria-label="Open navigation" class="nav-toggle" type="button">
 <span></span><span></span><span></span>
 </button>
-<nav aria-label="Main navigation" class="nav-menu"><a href="#about">Profile</a><a href="#languages">Languages</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#teaching">Teaching</a><a href="#awards">Awards</a><a href="#qualifications">Qualifications</a><a href="#contact">Contact</a></nav>
+<nav aria-label="Main navigation" class="nav-menu">
+<a href="#education">Education</a>
+<a href="#featured">Featured</a>
+<a href="#projects">Projects</a>
+<a href="#experience">Experience</a>
+<a href="#teaching">Teaching &amp; Volunteering</a>
+<a href="#awards">Awards</a>
+<a href="#qualifications">Qualifications</a>
+</nav>
 </header>
 <main>
-<section class="hero section-padding" id="home">
-<div class="hero-orb orb-one"></div>
-<div class="hero-orb orb-two"></div>
-<div class="hero-orb orb-three"></div>
-<div class="hero-content reveal">
-<p class="eyebrow">Computer Science Student · AI &amp; Cybersecurity R&amp;D · Swift/XR Builder</p>
-<h1>
-          Kelvin <span class="gradient-text">Li</span>
-</h1>
-<p class="hero-subtitle">I build intelligent, secure and immersive digital experiences across provider-agnostic AI, private local models, RAG systems, Swift/SwiftUI, 3D Gaussian Splatting, XR/WebXR, cloud platforms, cybersecurity workflows and full-stack applications.</p>
+<section class="hero section-shell" id="home">
+<div class="hero-copy reveal">
+<p class="eyebrow">Portfolio / Kelvin Li</p>
+<h1>Kelvin <span>Li</span></h1>
+<div aria-label="Kelvin Li portfolio terminal" class="hero-terminal">
+<div aria-hidden="true" class="hero-terminal-bar">
+<div class="terminal-traffic-lights"><span class="red"></span><span class="amber"></span><span class="green"></span></div>
+<span class="terminal-window-title">kelvin — zsh — 80×24</span>
+<span class="terminal-window-spacer"></span>
+</div>
+<div class="hero-terminal-body">
+<div class="terminal-line terminal-delay-1"><span class="terminal-prompt"><b>kelvin@portfolio</b> ~ %</span><span class="terminal-command">whoami</span></div>
+<div class="terminal-output terminal-delay-2">Computer Science Student</div>
+<div class="terminal-line terminal-delay-3"><span class="terminal-prompt"><b>kelvin@portfolio</b> ~ %</span><span class="terminal-command">focus --current</span></div>
+<div class="terminal-output terminal-output-accent terminal-delay-4">AI · Cybersecurity · Immersive Computing</div>
+<div class="terminal-line terminal-delay-5"><span class="terminal-prompt"><b>kelvin@portfolio</b> ~ %</span><span class="terminal-command">portfolio --show-stack</span></div>
+<div class="terminal-output terminal-delay-6">Software Engineering · Cloud · Networking · Swift · 3D Gaussian Splatting · XR/WebXR</div>
+<div class="terminal-line terminal-live terminal-delay-7"><span class="terminal-prompt"><b>kelvin@portfolio</b> ~ %</span><span aria-hidden="true" class="terminal-cursor"></span></div>
+</div>
+</div>
 <div class="hero-actions">
-<a class="btn btn-primary magnetic" href="#projects">Explore Projects</a>
-<a class="btn btn-secondary magnetic" href="https://www.linkedin.com/in/kelvin-kt-li/" rel="noopener" target="_blank">LinkedIn</a>
+<a class="button button-primary magnetic" href="#featured">View Selected Moments</a>
+<a class="button button-secondary magnetic" href="https://www.linkedin.com/in/kelvin-kt-li/" rel="noopener" target="_blank">LinkedIn Profile</a>
 </div>
-<div aria-label="Portfolio highlights" class="hero-stats">
-<div><strong>AI</strong><span>LLM · RAG · Local Models · STT/TTS</span></div>
-<div><strong>Swift / XR</strong><span>SwiftUI · MLX · ARKit · Vision Pro</span></div>
-<div><strong>Cloud</strong><span>AWS · EC2 · S3 · EMR · CloudWatch</span></div>
-<div><strong>Security</strong><span>SHA-256 · RSA/ECC · RBAC · Cisco</span></div>
+<div aria-label="Portfolio focus" class="hero-pills">
+<span>Swift / SwiftUI</span><span>3D Gaussian Splatting</span><span>XR/WebXR</span><span>Cybersecurity</span><span>Cloud</span><span>Networking</span>
 </div>
 </div>
-<aside aria-label="Profile card" class="hero-card reveal delay-1">
-<div class="hologram-ring"></div>
-<div class="profile-avatar">KL</div>
-<h2>Kelvin Li</h2>
-<p>Computer Science Student</p>
-<div class="status-pill"><span></span> BSc (Hons) Computer Science · PolyU</div>
-<ul class="profile-list">
-<li><span>Portfolio</span><a href="https://www.linkedin.com/in/kelvin-kt-li/" rel="noopener" target="_blank">LinkedIn Profile</a></li>
-</ul>
+<aside class="profile-window mac-window reveal">
+<div class="window-bar">
+<div aria-hidden="true" class="traffic-lights"><span class="red"></span><span class="amber"></span><span class="green"></span></div>
+<span class="window-title">About Kelvin Li</span>
+<span class="window-spacer"></span>
+</div>
+<div class="profile-window-body">
+<div class="profile-monogram avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div>
+<p class="profile-kicker">Computer Science Student</p>
+<h2>Building intelligent, secure and immersive digital experiences.</h2>
+</div>
+<div class="profile-row"><span>University</span><strong>The Hong Kong Polytechnic University</strong></div>
+<div class="profile-row"><span>Degree</span><strong>BSc (Hons) in Computer Science</strong></div>
+<div class="profile-row"><span>Portfolio</span><a class="content-link" href="https://kelvinli24.github.io/personal-website/" rel="noopener" target="_blank">Personal Website ↗</a></div>
+</div>
 </aside>
 </section>
-<section class="section-padding about-grid" id="about">
-<div class="section-heading reveal">
-<p class="eyebrow">Profile</p>
-<h2>Technology builder combining AI, security, Swift and immersive computing.</h2>
-</div>
-<div class="glass-panel reveal delay-1">
-<p>I am a Computer Science student at The Hong Kong Polytechnic University with hands-on experience in AI, cybersecurity research and development, Swift/SwiftUI application engineering, cloud deployment, networking and immersive media. My work includes FerryX, a provider-agnostic family companionship and memory-care platform with private local AI; MemoSpace, an award-winning 3DGS and AI digital-human ecosystem; AI-powered public-service platforms; cloud-hosted web applications; and secure enterprise network design.</p>
-<div aria-label="Skills" class="skill-cloud"><span>Python</span><span>TypeScript</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Node.js</span><span>Express</span><span>FastAPI</span><span>Flask</span><span>Java</span><span>Swift</span><span>SwiftUI</span><span>MLX</span><span>ARKit</span><span>Vision Pro</span><span>Three.js</span><span>WebGL</span><span>XR/WebXR</span><span>LLM</span><span>RAG</span><span>BM25</span><span>STT/TTS</span><span>Voice Cloning</span><span>TensorFlow</span><span>PyTorch</span><span>spaCy</span><span>AWS EC2</span><span>S3</span><span>CloudWatch</span><span>Apache Spark</span><span>EMR</span><span>SQLite</span><span>Local Databases</span><span>Nginx</span><span>SHA-256</span><span>RSA/ECC</span><span>Blockchain Audit Logging</span><span>Cisco</span><span>Windows Server</span></div>
-</div>
-</section>
-<section class="section-padding" id="languages">
-<div class="section-heading reveal">
-<p class="eyebrow">Languages</p>
-<h2>Communication across Cantonese, Putonghua and English.</h2>
-</div>
-<div class="language-grid refined-language-grid">
-<article class="language-card reveal featured-language language-major">
-<div class="language-icon">中</div>
-<h3>Chinese</h3>
-<p>Written Chinese, Cantonese spoken communication, and Putonghua spoken communication.</p>
-<div class="language-subgrid">
-<div class="language-mini-card">
-<span class="language-mini-label">Cantonese</span>
-<strong>Spoken communication</strong>
-<small>Native / Fluent</small>
-</div>
-<div class="language-mini-card cert-mini-card">
-<span class="language-mini-label">Putonghua</span>
-<strong>PSC Grade Two, Level A 二級甲等</strong>
-<small>Certificate of Proficiency in Putonghua (PSC) · The Hong Kong Polytechnic University and The State Language Commission · Attained in Jun 2026</small>
-</div>
-</div>
-</article>
-<article class="language-card reveal delay-1"><div class="language-icon">EN</div><h3>English</h3><p>Spoken and written communication</p><span class="language-level">Professional working communication</span><div class="mini-cert course-mini-card"><strong>ELC3524 Professional Communication for Computing Students</strong><span>The Hong Kong Polytechnic University · Grade A−</span></div></article>
-</div>
-</section>
-<section class="section-padding" id="education">
+<section class="section-shell" id="education">
 <div class="section-heading reveal">
 <p class="eyebrow">Education</p>
-<h2>Academic foundation in Computer Science, IT, networking and information security.</h2>
+<h2>Academic background and scholarship recognition.</h2>
 </div>
-<div class="timeline">
-<article class="timeline-item reveal">
-<span class="timeline-dot"></span>
-<div class="glass-panel timeline-card">
-<div class="card-topline">Sep 2024 – Aug 2026 · Hong Kong</div>
+<div class="education-stack">
+<article class="education-window mac-window reveal">
+<div class="window-bar">
+<div aria-hidden="true" class="traffic-lights"><span class="red"></span><span class="amber"></span><span class="green"></span></div>
+<span class="window-title">The Hong Kong Polytechnic University</span><span class="window-spacer"></span>
+</div>
+<div class="education-body">
+<div class="education-topline"><span>Sep, 2024 – Aug, 2026</span><span>Hong Kong</span></div>
 <h3>The Hong Kong Polytechnic University</h3>
-<p>BSc (Hons) in Computer Science</p>
-<p class="muted"><strong>Final Year Project:</strong> <a href="https://youtu.be/zI8TUeQuifU" rel="noopener" target="_blank">Immersive Virtual Tourism with 3DGS and AI Digital Humans</a> · Grade A</p>
-<p class="muted"><strong>Paper: </strong>Accepted as a Short Paper at APSCE TBICS on AI, MetaACES 2026</p></div>
+<p class="degree-line">BSc (Hons) in Computer Science</p>
+<div class="education-grid">
+<div class="education-fact education-project-fact">
+<span>Final Year Project</span>
+<div class="education-project-result">
+<a aria-label="Watch Immersive Virtual Tourism with 3DGS and AI Digital Humans on YouTube" class="education-source-button source-youtube" href="https://youtu.be/zI8TUeQuifU" rel="noopener" target="_blank">
+<span class="education-source-copy"><strong>Immersive Virtual Tourism with 3DGS and AI Digital Humans</strong><small>YouTube <span aria-hidden="true">↗</span></small></span>
+</a>
+<span class="education-grade-badge" aria-label="Final Year Project result: Grade A">
+<span class="education-grade-badge-label">Result</span>
+<strong>Grade A</strong>
+</span>
+</div>
+</div>
+<div class="education-fact">
+<span>Paper</span>
+<strong>Accepted as a Short Paper at <a class="content-link" href="https://eds.let.media.kyoto-u.ac.jp/TBICS2026/ai-metaaces-2026/" rel="noopener" target="_blank">APSCE TBICS on AI, MetaACES 2026</a></strong>
+</div>
+</div>
+<div class="scholarship-panel">
+<div class="scholarship-heading"><span>Scholarships</span></div>
+<div class="scholarship-list">
+<article>
+<h4>HKSAR Government Talent Development Scholarship (2025/26)</h4>
+<p class="recognition-line">Recipient, Apr 2026</p>
+<p>Issued by: Education Bureau, HKSAR Government</p>
 </article>
-<article class="timeline-item reveal delay-1">
-<span class="timeline-dot"></span>
-<div class="glass-panel timeline-card">
-<div class="card-topline">Sep 2022 – Aug 2024 · Hong Kong</div>
+<article class="scholarship-highlight">
+<h4>EDPS Innovation Scholarship 2025–26</h4>
+<p class="recognition-line">Scholarship Awardee — One of 20 awardees across Hong Kong, Aug 2026</p>
+<p class="recognition-line">2nd Place — Metaverse &amp; Extended Reality (AR, VR &amp; MR) Category</p>
+<p class="recognition-line">8th Place Overall</p>
+<p>Issued by: EDPS Systems Limited</p>
+</article>
+</div>
+</div>
+</div>
+</article>
+<article class="education-window mac-window reveal">
+<div class="window-bar">
+<div aria-hidden="true" class="traffic-lights"><span class="red"></span><span class="amber"></span><span class="green"></span></div>
+<span class="window-title">University of Hong Kong School of Professional and Continuing Education (HKU SPACE)</span><span class="window-spacer"></span>
+</div>
+<div class="education-body">
+<div class="education-topline"><span>Sep, 2022 - Aug, 2024</span><span>Hong Kong</span></div>
 <h3>University of Hong Kong School of Professional and Continuing Education (HKU SPACE)</h3>
-<p>Higher Diploma in Information Technology, major in Networking and Information Security Theme</p>
-<ul class="compact-list">
-<li>Cumulative GPA: 3.65</li>
-<li>Honour / Classification: Distinction</li>
-<li>Latest semester GPA: 3.92</li>
-<li>Awards and Achievements: Student on Principal's Honour List (2023–2024)</li>
-<li>Final Year Project: CyberConnect: Amplifying Eclipse Circuits' IoT Expansion · Grade A+</li>
-</ul>
+<p class="degree-line">Higher Diploma in Information Technology (major in: Networking and Information Security Theme)</p>
+<div class="metric-grid">
+<div><span>Cumulative GPA</span><strong>3.65</strong></div>
+<div><span>Honour / Classification</span><strong>Distinction</strong></div>
+<div><span>latest semester GPA</span><strong>3.92</strong></div>
+</div>
+<div class="education-fact">
+<span>Awards and Achievements</span><strong>Student on Principal's Honour List (2023-2024)</strong>
+</div>
+<div class="education-fact">
+<span>Final Year Project</span><strong>CyberConnect: Amplifying Eclipse Circuits' IoT Expansion | Grade A+</strong>
+</div>
 </div>
 </article>
 </div>
 </section>
-<section class="section-padding" id="projects">
+<section class="section-shell" id="featured">
 <div class="section-heading reveal">
-<p class="eyebrow">Projects</p>
-<h2>Projects that combine AI, cloud, security, networking and immersive interaction.</h2>
+<p class="eyebrow">Featured</p>
+<h2>Selected moments from research, competitions, events and exhibitions.</h2>
+<p class="section-note">Recent moments appear first. Open any post to view its photos and details.</p>
 </div>
-<div class="project-grid">
-<article class="project-card featured reveal">
-<div class="project-index">01</div>
-<h3><a href="https://youtu.be/zI8TUeQuifU" rel="noopener" target="_blank">Immersive Virtual Tourism with 3DGS and AI Digital Humans</a></h3>
-<p class="project-meta">Final Year Project · Grade A</p>
-<p>
-            Led the development of MemoSpace, an end-to-end immersive memory preservation platform integrating
-            3D Gaussian Splatting, XR/WebXR, and AI-driven digital humans. Independently built the MemoLens iOS
-            AR-guided capture app using Swift and ARKit, developed MemoPortal, a Three.js/WebGL-based web platform
-            for 3D point-cloud viewing, and contributed to the Apple Vision Pro immersive XR experience.
-          </p>
-<p>
-            Designed and implemented the MemoChat digital human module, combining LLM-based conversational AI,
-            Retrieval-Augmented Generation (RAG), memory database, persona management, chatlog import, STT/TTS,
-            voice cloning, lip-sync orchestration, and avatar-based storytelling to enable interactive,
-            memory-grounded conversations. Managed system architecture, module integration, 3D scene data collection,
-            and user evaluation.
-          </p>
-<p>
-            The project won China Collegiate Computing Contest Mobile Application Innovation Contest (MAIC)
-            <a href="https://www.polyu.edu.hk/comp/news-and-events/news/2025/0710_maic-2025/" rel="noopener" target="_blank">Hong Kong Regional Final Champion</a>,
-            <a href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_maic-2025-national-finals_nov25/" rel="noopener" target="_blank">National Final Second Prize</a>, and was accepted as a short paper at APSCE TBICS on AI, MetaACES 2026.
-          </p>
-<div class="tags"><span>3DGS</span><span>XR/WebXR</span><span>Swift</span><span>ARKit</span><span>Three.js</span><span>WebGL</span><span>Vision Pro</span><span>LLM</span><span>RAG</span><span>STT/TTS</span><span>Voice Cloning</span><span>Lip-sync</span></div>
-</article><article class="project-card reveal delay-1">
-<div class="project-index">02</div>
-<h3>FerryX | AI Family Companionship and Memory Care Platform</h3>
-<p>
-        Developed FerryX, a SwiftUI AI family companionship and memory-care app. Built a provider-agnostic AI layer
-        enabling users to connect external AI APIs or download app-provided lightweight local models for private/offline
-        use, with MLX, BM25/RAG, persona memories, chat-history import, STT/TTS, and local databases.
-      </p>
-<p>
-        Engineered backend services for provider routing, model management, memory retrieval, chat sessions, family
-        handover, reminders, low-pressure rewriting, summaries, consent controls, and the FerrySight Apple Vision Pro
-        experience. The project won the Best Apple Value Prize at the Hong Kong Regional Final of the China Collegiate
-        Computing Contest (Mobile Application Innovation Contest 2026).
-      </p>
-<div class="tags"><span>SwiftUI</span><span>MLX</span><span>Local AI</span><span>External AI APIs</span><span>BM25/RAG</span><span>Persona Memory</span><span>STT/TTS</span><span>Local Databases</span><span>Vision Pro</span><span>Privacy</span></div>
+<div class="post-feed featured-feed">
+<article class="social-post mac-window reveal featured-research-post" data-date="2026-01-01" data-post-id="featured-tbics-paper" id="featured-tbics-paper">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Featured · Research Paper</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>APSCE TBICS on AI, MetaACES 2026 — Short Paper</span>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for APSCE TBICS on AI, MetaACES 2026 in Kumamoto, Japan" class="media-shell" data-folder="assets/featured/apsce-tbics-on-ai-metaaces-2026" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder research-placeholder"><div class="placeholder-icon">⌘</div><strong>Paper &amp; conference moments</strong><span>Add 1.jpg, 2.jpg, 3.jpg… to this folder and the gallery will appear automatically.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">Research milestone</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines">
+<p>Accepted as a Short Paper at APSCE TBICS on AI, MetaACES 2026.</p>
+<p class="location-line"><span class="location-pin" aria-hidden="true">⌖</span><strong>Kumamoto, Japan</strong></p>
+</div></div>
+<div class="post-links"><a class="content-link source-link" href="https://eds.let.media.kyoto-u.ac.jp/TBICS2026/ai-metaaces-2026/" rel="noopener" target="_blank"><span class="source-link-main">APSCE TBICS on AI, MetaACES 2026 ↗</span><small class="source-link-meta">Conference Website</small></a></div>
+<div class="post-meta">Research · 2026 · Kumamoto, Japan</div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
 </article>
-<article class="project-card reveal delay-2">
-<div class="project-index">03</div>
-<h3><a href="https://youtu.be/MFNWAjzndo0" rel="noopener" target="_blank">CampusTradeSphere</a></h3>
-<p>
-            Developed and deployed CampusTradeSphere, a cloud-hosted e-commerce-style campus marketplace platform
-            for student trading and rental workflows. Worked on frontend–backend integration, REST API implementation,
-            backend services, SQLite database management, AWS deployment, and system verification using JavaScript,
-            Node.js, Express, Python Flask, Nginx, AWS EC2, S3, CloudWatch, and Apache Spark on EMR.
-          </p>
-<p>
-            Implemented product listing, cart/checkout, sale and rental order workflows, and an admin analytics
-            dashboard to visualise user activity, GMV, API latency, and live alerts, demonstrating hands-on experience
-            in web application development, API integration, cloud-hosted services, data processing, and operational monitoring.
-          </p>
-<div class="tags"><span>E-commerce</span><span>REST API</span><span>Node.js</span><span>Express</span><span>Flask</span><span>AWS EC2</span><span>S3</span><span>CloudWatch</span><span>Apache Spark</span><span>EMR</span></div>
-</article>
-<article class="project-card reveal delay-3">
-<div class="project-index">04</div>
-<h3>HKAssist | AI-Powered Public Service Coordination Platform</h3>
-<p>
-            Led the development of HKAssist, an award-winning AI chatbot and city-level public service coordination
-            platform that received the <a href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_open-data-hackathon-2025_jan-2026/" rel="noopener" target="_blank">Best Innovation Award (Tertiary Stream) at the Open Data Hackathon 2025 (Smart Economy)</a>.
-          </p>
-<p>
-            Integrated LLM, RAG, n8n workflow automation, API orchestration, and 3D Gaussian Splatting (3DGS) to
-            help citizens, SMEs, and visitors navigate cross-departmental public service procedures, including
-            requirement identification, document preparation, task automation, progress tracking, and immersive 360° tourism experiences.
-          </p>
-<div class="tags"><span>AI Chatbot</span><span>LLM</span><span>RAG</span><span>n8n</span><span>API Orchestration</span><span>3DGS</span><span>Open Data</span></div>
-</article>
-<article class="project-card reveal delay-4">
-<div class="project-index">05</div>
+<article class="social-post mac-window reveal" data-date="2025-11-01" data-post-id="featured-national-final" id="featured-national-final">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Featured · National Final</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>China Collegiate Computing Contest (Mobile Application Innovation Contest 2025) — National Final</span>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for China Collegiate Computing Contest (Mobile Application Innovation Contest 2025) — National Final" class="media-shell" data-folder="assets/featured/china-collegiate-computing-contest-mobile-application-innovation-contest-2025-national-final" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p>National Final moments.</p><p class="recognition-line">Second Prize (National Final), Nov 2025.</p></div></div>
+<div class="post-links"><a class="content-link source-link source-polyu" href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_maic-2025-national-finals_nov25/" rel="noopener" target="_blank"><span class="source-link-main">National Final result ↗</span><small class="source-link-meta">PolyU COMP News</small></a><a class="content-link" href="https://kelvinli24.github.io/memospaceweb/" rel="noopener" target="_blank">MemoSpace website ↗</a></div>
+<a class="journey-reference" href="#featured-diocesan-girls-school"><span class="journey-reference-label">Previous milestone</span><strong>Diocesan Girls’ School AI Technology Exhibition</strong><span>29 Oct 2025 · before the National Final</span><span class="journey-reference-arrow" aria-hidden="true">↙</span></a>
+<div class="post-meta">Selected Moment · Nov 2025</div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article><article class="social-post mac-window reveal" data-date="2025-01-01" data-post-id="featured-summer-camp" id="featured-summer-camp">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Featured · Summer Camp</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>China Collegiate Computing Contest (Mobile Application Innovation Contest 2025) — Summer Camp</span>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for China Collegiate Computing Contest (Mobile Application Innovation Contest 2025) — Summer Camp" class="media-shell" data-folder="assets/featured/china-collegiate-computing-contest-mobile-application-innovation-contest-2025-summer-camp" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p>Summer Camp moments from the China Collegiate Computing Contest (Mobile Application Innovation Contest 2025).</p></div></div>
+<div class="post-meta">Selected Moment · 2025</div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article><article class="social-post mac-window reveal" data-date="2025-10-29" data-post-id="featured-diocesan-girls-school" id="featured-diocesan-girls-school">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Featured · AI Technology Exhibition</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span><a class="content-link" href="https://www.dgs.edu.hk/" rel="noopener" target="_blank">AI Technology Exhibition at Diocesan Girls’ School</a></span>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for AI Technology Exhibition at Diocesan Girls&amp;#39; School" class="media-shell" data-folder="assets/featured/diocesan-girls-school-ai-technology-exhibition" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">MemoSpace journey · before the National Final</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines">
+<p>On 29 October 2025, our team showcased our project MemoSpace at the Diocesan Girls’ School AI Technology Exhibition.</p>
+<p>During the event, we had the distinct honour of presenting MemoSpace to Prof. SUN Dong, JP, Secretary for Innovation, Technology and Industry of the HKSAR Government.</p>
+<p>The positive feedback from Prof. Sun, along with valuable interactions with teachers, parents, and students, provided the team with crucial insights into user experience and product design, ultimately contributing to the final refinement of our award-winning system.</p>
+</div></div>
+<div class="journey-bridge" aria-label="MemoSpace journey from the Diocesan Girls’ School AI Technology Exhibition to the National Final">
+<div class="journey-kicker">MemoSpace Journey</div>
+<div class="journey-track">
+<div class="journey-stop is-current"><span class="journey-dot"></span><div><small>29 Oct 2025</small><strong>Diocesan Girls’ School AI Technology Exhibition</strong><span>User feedback &amp; product refinement</span></div></div>
+<div class="journey-line"><span></span></div>
+<a class="journey-stop is-next" href="#featured-national-final"><span class="journey-dot"></span><div><small>Next milestone · Nov 2025</small><strong>China Collegiate Computing Contest (Mobile Application Innovation Contest 2025) — National Final</strong><span>Second Prize (National Final)</span></div><span class="journey-arrow" aria-hidden="true">↗</span></a>
+</div>
+</div>
+<div class="post-meta">Selected Moment · 29 Oct 2025</div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article></div>
+</section>
+<section class="section-shell" id="projects">
+<div class="section-heading reveal">
+<p class="eyebrow">Selected Project Stories</p>
+<h2>Competition, scholarship and immersive project highlights.</h2>
+<p class="section-note">Full competition and project names are shown throughout.</p>
+</div>
+<div class="post-feed project-feed">
+<article class="social-post mac-window reveal" data-date="2026-08-01" data-post-id="project-edps-innovation-scholarship" id="project-edps-innovation-scholarship">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Selected Project Story</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>EDPS Innovation Scholarship 2025–26</span>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for EDPS Innovation Scholarship 2025–26" class="media-shell" data-folder="assets/projects/edps-innovation-scholarship-2025-26" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p class="recognition-line">Scholarship Awardee — One of 20 awardees across Hong Kong, Aug 2026</p><p class="recognition-line">2nd Place — Metaverse &amp; Extended Reality (AR, VR &amp; MR) Category</p><p class="recognition-line">8th Place Overall</p><p>Issued by: EDPS Systems Limited</p></div></div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article><article class="social-post mac-window reveal" data-date="2026-08-01" data-post-id="project-i-fell-into-the-cantoverse" id="project-i-fell-into-the-cantoverse">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Selected Project Story</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>I Fell into the CantoVerse? | Immersive Cantonese Opera VR Mystery Experience</span>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for I Fell into the CantoVerse? | Immersive Cantonese Opera VR Mystery Experience" class="media-shell" data-folder="assets/projects/i-fell-into-the-cantoverse" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p>An immersive Cantonese Opera VR mystery experience.</p><p class="award-name-line">Digital &amp; Intelligent Soundscape Competition (20th China Creative Challenges Contest)</p><p class="recognition-line">Third Prize (National Final), Aug 2026</p><p>Issued by: China Higher Education Association &amp; CDEC Organising Committee</p></div></div>
+<details class="post-details"><summary>View full project details</summary><div class="post-detail-lines"><p>Developed an interactive WebXR experience inspired by the Cantonese Opera The Grand Investiture of the Six States, using Three.js, WebGL, and WebXR.</p><p>Implemented VR/desktop exploration, clue collection, NPC interactions, branching narrative, and immersive Cantonese Opera soundscapes.</p></div></details>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article><article class="social-post mac-window reveal" data-date="2026-07-01" data-post-id="project-metaverse-ai-contest" id="project-metaverse-ai-contest">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Selected Project Story</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>Metaverse + AI Contest</span>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for Metaverse + AI Contest" class="media-shell" data-folder="assets/projects/metaverse-ai-contest" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p class="recognition-line">1st Runner-up, Jul 2026</p><p>Issued by: Pao Yue-kong Library &amp; Department of Computing (COMP), The Hong Kong Polytechnic University</p></div></div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article><article class="social-post mac-window reveal" data-date="2026-07-01" data-post-id="project-mobile-application-innovation-contest-2026" id="project-mobile-application-innovation-contest-2026">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Selected Project Story</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>China Collegiate Computing Contest (Mobile Application Innovation Contest 2026)</span>
+<small>FerryX | AI Family Companionship and Memory Care Platform</small>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for China Collegiate Computing Contest (Mobile Application Innovation Contest 2026)" class="media-shell" data-folder="assets/projects/china-collegiate-computing-contest-mobile-application-innovation-contest-2026" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p class="recognition-line">Best Apple Value Prize (Hong Kong Regional Final), Jul 2026</p><p>Issued by: Department of Computing (COMP), The Hong Kong Polytechnic University &amp; Computer Education Research Association of Chinese Universities</p></div></div>
+<details class="post-details"><summary>View full FerryX project details</summary><p>Developed FerryX, a SwiftUI AI family companionship and memory-care app. Built a provider-agnostic AI layer enabling users to connect external AI APIs or download app-provided lightweight local models for private/offline use, with MLX, BM25/RAG, persona memories, chat-history import, STT/TTS, and local databases. Engineered backend services for provider routing, model management, memory retrieval, chat sessions, family handover, reminders, low-pressure rewriting, summaries, consent controls, and the FerrySight Apple Vision Pro experience. The project won the Best Apple Value Prize at the Hong Kong Regional Final of the China Collegiate Computing Contest (Mobile Application Innovation Contest 2026).</p></details>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article><article class="social-post mac-window reveal" data-date="2026-07-01" data-post-id="project-3chuang" id="project-3chuang">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Selected Project Story</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>16th National E-commerce "Innovation, Creativity and Entrepreneurship" Competition for College Students ("3Chuang")</span>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label='Photo gallery for 16th National E-commerce "Innovation, Creativity and Entrepreneurship" Competition for College Students ("3Chuang")' class="media-shell" data-folder="assets/projects/16th-national-e-commerce-innovation-creativity-and-entrepreneurship-competition-for-college-students-3chuang" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p class="recognition-line">Second Prize (Provincial-Level), Jul 2026</p><p class="recognition-line">Second Prize (University-Level), May 2026</p><p>Issued by: National 3Chuang Competition Organizing Committee</p></div></div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article><article class="social-post mac-window reveal" data-date="2026-03-01" data-post-id="project-hkgcc-business-case-competition" id="project-hkgcc-business-case-competition">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Selected Project Story</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>HKGCC Business Case Competition 2025/26</span>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for HKGCC Business Case Competition 2025/26" class="media-shell" data-folder="assets/projects/hkgcc-business-case-competition-2025-26" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p class="recognition-line">2nd Runner-up — Towngas Track, Mar 2026</p><p>Issued by: HKGCC — Hong Kong General Chamber of Commerce</p></div></div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article><article class="social-post mac-window reveal" data-date="2026-02-01" data-post-id="project-open-data-hackathon-2025" id="project-open-data-hackathon-2025">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Selected Project Story</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>Open Data Hackathon 2025</span>
+<small>HKAssist | AI-Powered Public Service Coordination Platform</small>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for Open Data Hackathon 2025" class="media-shell" data-folder="assets/projects/open-data-hackathon-2025" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p class="recognition-line">Best Innovation Award — Tertiary Stream, Feb 2026</p><p>Issued by: HKtag — Hong Kong Technology Advancement Group</p></div></div>
+<details class="post-details"><summary>View full HKAssist project details</summary><p>Led the development of HKAssist, an award-winning AI chatbot and city-level public service coordination platform that received the Best Innovation Award (Tertiary Stream) at the Open Data Hackathon 2025 (Smart Economy). Integrated LLM, RAG, n8n workflow automation, API orchestration, and 3D Gaussian Splatting (3DGS) to help citizens, SMEs, and visitors navigate cross-departmental public service procedures, including requirement identification, document preparation, task automation, progress tracking, and immersive 360° tourism experiences.</p></details>
+<div class="post-links"><a class="content-link source-link source-polyu" href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_open-data-hackathon-2025_jan-2026/" rel="noopener" target="_blank"><span class="source-link-main">Open Data Hackathon result ↗</span><small class="source-link-meta">PolyU COMP News</small></a></div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article><article class="social-post mac-window reveal" data-date="2025-11-01" data-post-id="project-mobile-application-innovation-contest-2025-national-final" id="project-mobile-application-innovation-contest-2025-national-final">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Selected Project Story</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>China Collegiate Computing Contest (Mobile Application Innovation Contest 2025) — National Final</span>
+<small>Immersive Virtual Tourism with 3DGS and AI Digital Humans · Final Year Project · Grade A</small>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for China Collegiate Computing Contest (Mobile Application Innovation Contest 2025) — National Final" class="media-shell" data-folder="assets/projects/china-collegiate-computing-contest-mobile-application-innovation-contest-2025-national-final" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p class="recognition-line">Second Prize (National Final), Nov 2025</p><p>Issued by: Computer Education Research Association of Chinese Universities</p></div></div>
+<div class="post-links"><a class="content-link source-link source-polyu" href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_maic-2025-national-finals_nov25/" rel="noopener" target="_blank"><span class="source-link-main">National Final result ↗</span><small class="source-link-meta">PolyU COMP News</small></a><a class="content-link" href="https://kelvinli24.github.io/memospaceweb/" rel="noopener" target="_blank">MemoSpace website ↗</a></div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article><article class="social-post mac-window reveal" data-date="2025-07-01" data-post-id="project-mobile-application-innovation-contest-2025-hong-kong-regional-final" id="project-mobile-application-innovation-contest-2025-hong-kong-regional-final">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Selected Project Story</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>China Collegiate Computing Contest (Mobile Application Innovation Contest 2025) — Hong Kong Regional Final</span>
+<small>Immersive Virtual Tourism with 3DGS and AI Digital Humans · Final Year Project · Grade A</small>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for China Collegiate Computing Contest (Mobile Application Innovation Contest 2025) — Hong Kong Regional Final" class="media-shell" data-folder="assets/projects/china-collegiate-computing-contest-mobile-application-innovation-contest-2025-hong-kong-regional-final" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p class="recognition-line">Champion (Hong Kong Regional Final), Jul 2025</p><p>Issued by: The Hong Kong Polytechnic University Department of Computing (PolyU COMP) &amp; iOS Club</p></div></div>
+<details class="post-details"><summary>View full MemoSpace project details</summary><p>Led the development of MemoSpace, an end-to-end immersive memory preservation platform integrating 3D Gaussian Splatting, XR/WebXR, and AI-driven digital humans. Independently built the MemoLens iOS AR-guided capture app using Swift and ARKit, developed MemoPortal, a Three.js/WebGL-based web platform for 3D point-cloud viewing, and contributed to the Apple Vision Pro immersive XR experience. Designed and implemented the MemoChat digital human module, combining LLM-based conversational AI, Retrieval-Augmented Generation (RAG), memory database, persona management, chatlog import, STT/TTS, voice cloning, lip-sync orchestration, and avatar-based storytelling to enable interactive, memory-grounded conversations. Managed system architecture, module integration, 3D scene data collection, and user evaluation. The project won China Collegiate Computing Contest (Mobile Application Innovation Contest 2025) Hong Kong Regional Final Champion, National Final Second Prize, and was accepted as a short paper at APSCE TBICS on AI, MetaACES 2026.</p></details>
+<div class="post-links"><a class="content-link source-link source-polyu" href="https://www.polyu.edu.hk/comp/news-and-events/news/2025/0710_maic-2025/" rel="noopener" target="_blank"><span class="source-link-main">Hong Kong Regional Final result ↗</span><small class="source-link-meta">PolyU COMP News</small></a><a class="content-link" href="https://kelvinli24.github.io/memospaceweb/" rel="noopener" target="_blank">MemoSpace website ↗</a></div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article></div>
+<div class="subsection-heading reveal">
+<p class="eyebrow">More Technical Projects</p>
+<h3>Cloud application development and enterprise networking projects.</h3>
+</div>
+<div class="project-detail-grid">
+<article class="project-detail-window mac-window reveal"><div class="window-bar"><div aria-hidden="true" class="traffic-lights"><span class="red"></span><span class="amber"></span><span class="green"></span></div><span class="window-title">Cloud Application Project</span><span class="window-spacer"></span></div><div class="project-detail-body">
+<div class="archive-label">Web &amp; Cloud Application</div>
+<h3><a class="content-link source-link source-youtube" href="https://youtu.be/MFNWAjzndo0" rel="noopener" target="_blank"><span class="source-link-main">CampusTradeSphere</span><small class="source-link-meta">YouTube</small></a></h3>
+<p>Developed and deployed CampusTradeSphere, a cloud-hosted e-commerce-style campus marketplace platform for student trading and rental workflows. Worked on frontend–backend integration, REST API implementation, backend services, SQLite database management, AWS deployment, and system verification using JavaScript, Node.js, Express, Python Flask, Nginx, AWS EC2, S3, CloudWatch, and Apache Spark on EMR. Implemented product listing, cart/checkout, sale and rental order workflows, and an admin analytics dashboard to visualise user activity, GMV, API latency, and live alerts, demonstrating hands-on experience in web application development, API integration, cloud-hosted services, data processing, and operational monitoring.</p>
+</div></article>
+<article class="project-detail-window mac-window reveal"><div class="window-bar"><div aria-hidden="true" class="traffic-lights"><span class="red"></span><span class="amber"></span><span class="green"></span></div><span class="window-title">Enterprise Networking Project</span><span class="window-spacer"></span></div><div class="project-detail-body">
+<div class="archive-label">Networking &amp; Security</div>
 <h3>CyberConnect: Amplifying Eclipse Circuits' IoT Expansion</h3>
-<p class="project-meta">Final Year Project · Team Leader · Grade A+</p>
-<p>
-            Designed a secure, multi-region enterprise network covering Hong Kong, Shenzhen, Shanghai, and Beijing
-            in a simulated academic project scenario. Led WAN/LAN planning, security, and server-side deployment.
-          </p>
-<ul class="compact-list">
-<li>Server infrastructure: AD, DNS, Web/File servers, GPO</li>
-<li>Physical network topologies for 4 sites</li>
-<li>Workstation security configuration and RBAC</li>
-<li>Departmental user count planning</li>
-<li>Technologies: Cisco Catalyst 9500/9600, Windows Server 2016, CentOS, GPO, VLAN, NAT/PAT, OSPF</li>
-<li>Produced 70+ page technical report; awarded A+</li>
-</ul>
-<p class="note">Company names are fictional and created for academic demonstration purposes. Region names are real and used only as part of a simulated project scenario.</p>
-<div class="tags"><span>Cisco Catalyst</span><span>Windows Server</span><span>CentOS</span><span>GPO</span><span>VLAN</span><span>NAT/PAT</span><span>OSPF</span><span>RBAC</span></div>
-</article>
+<p class="archive-meta">Final Year Project | Team Leader | Grade A+</p>
+<p>Designed a secure, multi-region enterprise network (HK, Shenzhen, Shanghai, Beijing#).</p><p>Led WAN/LAN planning, security, and server-side deployment.</p><p class="project-detail-label">My Responsibilities:</p><ul class="project-detail-list"><li>Server infrastructure: AD, DNS, Web/File servers, GPO</li><li>Physical network topologies for 4 sites</li><li>Workstation security config and RBAC</li><li>Departmental user count planning</li></ul><p>Technologies: Cisco Catalyst 9500/9600, Windows Server 2016, CentOS, GPO, VLAN, NAT/PAT, OSPF</p><p>Produced 70+ page technical report; awarded A+</p><p class="project-detail-note">#Note: Company names are fictional and created for academic demonstration purposes. Region names (e.g., Hong Kong, Shenzhen, Shanghai, Beijing) are real and used only as part of a simulated project scenario.</p></div></article>
 </div>
 </section>
-<section class="section-padding" id="experience">
+<section class="section-shell" id="experience">
 <div class="section-heading reveal">
 <p class="eyebrow">Work Experience</p>
-<h2>Hands-on development, research, customer service and team collaboration.</h2>
+<h2>Professional experience.</h2>
 </div>
 <div class="experience-stack">
 <article class="experience-card reveal">
-<div class="experience-date">Jan 2025 – Aug 2025</div>
-<div>
+<div class="experience-date">Jan, 2025 - Aug, 2025</div>
+<div class="experience-content">
 <h3>AI and Cybersecurity R&amp;D Intern</h3>
-<p class="company">Feelings Group Limited · Hong Kong</p>
-<ul>
-<li>Worked across AI and cybersecurity research &amp; development, alongside software and web development. Focus areas included phishing detection, biometric identity verification, secure backend systems, and interactive internal tools.</li>
-<li>Conducted AI and cybersecurity-focused research and prototyping on identity verification systems, including digital signatures and blockchain-based audit logging.</li>
-<li>Developed phishing detection and scam analysis models using Python, TensorFlow, PyTorch, and spaCy.</li>
-<li>Designed and implemented software systems including backend services, APIs, and internal tools using TypeScript, Node.js, Java, Python, and FastAPI.</li>
-<li>Built user-facing components and dashboards with JavaScript, HTML, and CSS.</li>
-<li>Applied cybersecurity techniques such as SHA-256 hashing, RSA/ECC digital signatures, and secure identity validation workflows.</li>
-<li>Used SQLite for storing structured development data in local backend environments.</li>
-<li>Delivered live demos and technical walkthroughs to supervisors to communicate development progress.</li>
-<li>Collaborated in a small development team, contributing to software design, implementation, and debugging.</li>
-</ul>
+<p class="company-line">Feelings Group Limited | Hong Kong</p>
+<ul><li>Worked across AI and cybersecurity research &amp; development, alongside software and web development. Focus areas included phishing detection, biometric identity verification, secure backend systems, and interactive internal tools.</li><li>Conducted AI and cybersecurity-focused research and prototyping on identity verification systems, including digital signatures and blockchain-based audit logging.</li><li>Developed phishing detection and scam analysis models using Python (TensorFlow, PyTorch, spaCy).</li><li>Designed and implemented software systems including backend services, APIs, and internal tools using TypeScript (Node.js), Java, and Python (FastAPI).</li><li>Built user-facing components and dashboards with JavaScript, HTML, and CSS.</li><li>Applied cybersecurity techniques such as SHA-256 hashing, RSA/ECC digital signatures, and secure identity validation workflows.</li><li>Used SQLite for storing structured development data in local backend environments.</li><li>Delivered live demos and technical walkthroughs to supervisors to communicate development progress.</li><li>Collaborated in a small development team, contributing to software design, implementation, and debugging.</li></ul>
 </div>
 </article>
-<article class="experience-card reveal delay-1">
-<div class="experience-date">Jun 2023 – Aug 2026</div>
-<div>
-<h3>Cast Member</h3>
-<p class="company">Hong Kong International Theme Park Ltd. · Hong Kong</p>
-
-</div>
+<article class="experience-card reveal">
+<div class="experience-date">Jun, 2023 – Aug, 2026</div>
+<div class="experience-content"><h3>Cast Member</h3><p class="company-line">Hong Kong International Theme Park Ltd. | Hong Kong</p></div>
 </article>
-<article class="experience-card reveal delay-2">
-<div class="experience-date">Jul 2019 – Nov 2023</div>
-<div>
-<h3>Barista</h3>
-<p class="company">McDonald's · Hong Kong</p>
-
-</div>
+<article class="experience-card reveal">
+<div class="experience-date">Jul, 2019 - Nov, 2023</div>
+<div class="experience-content"><h3>Barista</h3><p class="company-line">McDonald's | Hong Kong</p></div>
 </article>
 </div>
-</section><section class="section-padding" id="teaching">
+</section>
+<section class="section-shell" id="teaching">
 <div class="section-heading reveal">
 <p class="eyebrow">Teaching &amp; Volunteering Experience</p>
-<h2>Supporting learners through Swift, FinTech and service-learning activities.</h2>
+<h2>Teaching and volunteering experience.</h2>
 </div>
-<div class="teaching-grid">
-<article class="teaching-card reveal">
-<div class="teaching-date">Jul 2026</div>
-<h3>Teaching Assistant — Swift App Development Summer Camp</h3>
-<p class="company">Invent Your Own Future × The Hong Kong Polytechnic University</p>
-<p>Supported a five-day Swift app development bootcamp for upper-primary and junior-secondary students.</p>
-</article>
-<article class="teaching-card reveal delay-1">
-<div class="teaching-date">Jul 2026</div>
-<h3>Teaching Assistant — FinTech &amp; Investment Banking Bootcamp</h3>
-<p class="company">Invent Your Own Future × The Hong Kong Polytechnic University</p>
-<p>Supported a five-day FinTech and investment banking bootcamp for upper-secondary students.</p>
-</article>
-<article class="teaching-card reveal delay-2">
-<div class="teaching-date">May 2026</div>
-<h3>Teaching Assistant — Service-Learning Project (COMP2S01)</h3>
-<p class="company">Department of Computing (COMP), The Hong Kong Polytechnic University</p>
-<p>Supported teaching and student activities for a university service-learning project.</p>
-</article>
+<div class="post-feed teaching-feed">
+<article class="social-post mac-window reveal" data-date="2026-07-01" data-post-id="teaching-swift-summer-camp" id="teaching-swift-summer-camp">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Teaching &amp; Volunteering</span>
+<span class="window-spacer"></span>
 </div>
-</section>
-<section class="section-padding" id="awards">
-<div class="section-heading reveal">
-<p class="eyebrow">Awards &amp; Achievements</p>
-<h2>Competition results and recognitions.</h2>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>Teaching Assistant — Swift App Development Summer Camp</span>
+<small>Invent Your Own Future x The Hong Kong Polytechnic University</small>
 </div>
-<div class="award-grid large"><article class="award-card reveal highlight-award">
-<strong>HKSAR Government Talent Development Scholarship (2025/26)</strong>
-<ul><li>Recipient, Apr 2026</li><li>Issued by: Education Bureau, HKSAR Government</li></ul>
-</article><article class="award-card reveal delay-1">
-<strong>Digital &amp; Intelligent Soundscape Competition<br/><span>20th China Creative Challenges Contest</span></strong>
-<ul><li>Third Prize (National Final), Aug 2026</li><li>Issued by: China Higher Education Association &amp; CDEC Organising Committee</li></ul>
-</article><article class="award-card reveal delay-2">
-<strong>Metaverse + AI Contest</strong>
-<ul><li>1st Runner-up, Jul 2026</li><li>Issued by: Pao Yue-kong Library &amp; Department of Computing (COMP), The Hong Kong Polytechnic University</li></ul>
-</article><article class="award-card reveal delay-3">
-<strong>China Collegiate Computing Contest<br/><span>Mobile Application Innovation Contest 2026</span></strong>
-<ul><li>Best Apple Value Prize (Hong Kong Regional Final), Jul 2026</li><li>Issued by: Department of Computing (COMP), The Hong Kong Polytechnic University &amp; Computer Education Research Association of Chinese Universities</li></ul>
-</article><article class="award-card reveal delay-4">
-<strong>16th National E-commerce “Innovation, Creativity and Entrepreneurship” Competition for College Students<br/><span>“3Chuang”</span></strong>
-<ul><li>Second Prize (Provincial-Level), Jul 2026</li><li>Second Prize (University-Level), May 2026</li><li>Issued by: National 3Chuang Competition Organizing Committee</li></ul>
-</article><article class="award-card reveal">
-<strong>PolyU Ideation Funding Scheme (2025/26)</strong>
-<ul><li>Recipient, May 2026</li><li>Issued by: Knowledge Transfer and Entrepreneurship Office (KTEO), The Hong Kong Polytechnic University</li></ul>
-</article><article class="award-card reveal delay-1">
-<strong>China Collegiate Computing Contest<br/><span>Mobile Application Innovation Contest 2025</span></strong>
-<ul>
-<li><a href="https://www.polyu.edu.hk/comp/news-and-events/news/2025/0710_maic-2025/" rel="noopener" target="_blank">Champion (Hong Kong Regional Final), Jul 2025</a></li>
-<li><a href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_maic-2025-national-finals_nov25/" rel="noopener" target="_blank">Second Prize (National Final), Nov 2025</a></li>
-<li>Issued by: The Hong Kong Polytechnic University Department of Computing (PolyU COMP) &amp; iOS Club (Hong Kong Regional Final) / Computer Education Research Association of Chinese Universities (National Final)</li>
-</ul>
-<a class="btn btn-secondary mini-link-button magnetic" href="https://kelvinli24.github.io/memospaceweb/" rel="noopener" target="_blank">Visit MemoSpace Website</a>
-</article><article class="award-card reveal delay-2">
-<strong>Open Data Hackathon 2025</strong>
-<ul><li><a href="https://www.polyu.edu.hk/comp/news-and-events/news/2026/0424_open-data-hackathon-2025_jan-2026/" rel="noopener" target="_blank">Best Innovation Award — Tertiary Stream, Feb 2026</a></li><li>Issued by: HKtag — Hong Kong Technology Advancement Group</li></ul>
-</article><article class="award-card reveal delay-3">
-<strong>HKGCC Business Case Competition 2025/26</strong>
-<ul><li>2nd Runner-up — Towngas Track, Mar 2026</li><li>Issued by: HKGCC — Hong Kong General Chamber of Commerce</li></ul>
-</article><article class="award-card reveal delay-4">
-<strong>Global Game Jam 2026</strong>
-<ul><li>Certificate of Participation, Jan – Feb 2026</li><li>Issued by: GGJHK Committee</li></ul>
-</article><article class="award-card reveal">
-<strong>IoT Data Hackathon 2025</strong>
-<ul><li>Certificate of Participation, Apr 2025</li><li>Issued by: GS1 Hong Kong</li></ul>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for Teaching Assistant — Swift App Development Summer Camp" class="media-shell" data-folder="assets/teaching-volunteering/teaching-assistant-swift-app-development-summer-camp" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p>Supported a five-day Swift app development bootcamp for upper-primary and junior-secondary students.</p></div></div>
+<div class="post-meta">Jul 2026</div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article><article class="social-post mac-window reveal" data-date="2026-07-01" data-post-id="teaching-fintech" id="teaching-fintech">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Teaching &amp; Volunteering</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>Teaching Assistant — FinTech &amp; Investment Banking Bootcamp</span>
+<small>Invent Your Own Future x The Hong Kong Polytechnic University</small>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for Teaching Assistant — FinTech &amp; Investment Banking Bootcamp" class="media-shell" data-folder="assets/teaching-volunteering/teaching-assistant-fintech-and-investment-banking-bootcamp" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p>Supported a five-day FinTech and investment banking bootcamp for upper-secondary students.</p></div></div>
+<div class="post-meta">Jul 2026</div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article><article class="social-post mac-window reveal" data-date="2026-05-01" data-post-id="teaching-service-learning" id="teaching-service-learning">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Teaching &amp; Volunteering</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>Teaching Assistant — Service-Learning Project (COMP2S01)</span>
+<small>Department of Computing (COMP), The Hong Kong Polytechnic University</small>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for Teaching Assistant — Service-Learning Project (COMP2S01)" class="media-shell" data-folder="assets/teaching-volunteering/teaching-assistant-service-learning-project-comp2s01" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p>Supported teaching and student activities for a university service-learning project.</p></div></div>
+<div class="post-meta">May 2026</div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
 </article></div>
 </section>
-<section class="section-padding" id="qualifications">
+<section class="section-shell" id="yunnan-service-learning">
+<div class="section-heading reveal">
+<p class="eyebrow">Service-Learning Experience</p>
+<h2>Yunnan service-learning photo journals.</h2>
+</div>
+<div class="post-feed yunnan-feed">
+<article class="social-post mac-window reveal" data-date="2026-01-01" data-post-id="yunnan-service-learning-2026" id="yunnan-service-learning-2026">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Service-Learning · 2026</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>Yunnan Service-Learning Experience — 2026</span>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for Yunnan Service-Learning Experience — 2026" class="media-shell" data-folder="assets/yunnan-service-learning/2026" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p>Photo journal for my 2026 service-learning experience in Yunnan.</p></div></div>
+<div class="post-meta">2026</div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article><article class="social-post mac-window reveal" data-date="2025-01-01" data-post-id="yunnan-service-learning-2025" id="yunnan-service-learning-2025">
+<div class="window-bar">
+<div class="traffic-lights interactive-traffic-lights" data-window-controls=""><button aria-disabled="true" aria-label="Close expanded post" class="window-control red" data-window-action="close" tabindex="-1" type="button"></button><button aria-disabled="true" aria-label="Restore expanded post" class="window-control amber" data-window-action="minimize" tabindex="-1" type="button"></button><button aria-disabled="false" aria-label="Expand this post" class="window-control green" data-window-action="expand" type="button"></button></div>
+<span class="window-title">Service-Learning · 2025</span>
+<span class="window-spacer"></span>
+</div>
+<div class="post-header">
+<div class="post-avatar avatar-frame"><img alt="Kelvin Li" class="avatar-image" loading="eager" src="assets/icon.png"/><span class="avatar-fallback">KL</span></div>
+<div class="post-heading">
+<strong>Kelvin Li</strong>
+<span>Yunnan Service-Learning Experience — 2025</span>
+</div>
+<button aria-label="More options" class="more-button" type="button">•••</button>
+</div>
+<div aria-label="Photo gallery for Yunnan Service-Learning Experience — 2025" class="media-shell" data-folder="assets/yunnan-service-learning/2025" data-max-images="30" tabindex="0">
+<div class="gallery-stage">
+<div class="gallery-placeholder"><div class="placeholder-icon">▧</div><strong>Photos coming soon</strong><span>This gallery will appear automatically when photos are added.</span></div>
+</div>
+<button aria-label="Previous photo" class="gallery-nav gallery-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" class="gallery-nav gallery-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div aria-live="polite" class="gallery-counter"></div>
+<div aria-hidden="true" class="double-like">♥</div>
+</div>
+<div class="post-actions">
+<div class="post-actions-left">
+<button aria-label="Like this post" class="icon-button like-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg></button>
+<button aria-label="Comment on this post" class="icon-button comment-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></svg></button>
+<button aria-label="Share this post" class="icon-button share-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+</div>
+<button aria-label="Save this post" class="icon-button bookmark-button" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"></path></svg></button>
+</div>
+<div aria-label="Gallery position" class="carousel-dots"></div>
+<div class="post-body">
+<div aria-live="polite" class="like-status">A selected portfolio moment</div>
+<div class="post-caption"><strong class="caption-author">Kelvin Li</strong><div class="caption-lines"><p>Photo journal for my 2025 service-learning experience in Yunnan.</p></div></div>
+<div class="post-meta">2025</div>
+<div class="comment-panel" hidden="">
+<div class="comment-list"></div>
+<form class="comment-form">
+<input aria-label="Add a comment" maxlength="180" placeholder="Add a comment…" type="text"/>
+<button type="submit">Post</button>
+</form>
+</div>
+</div>
+</article></div>
+</section>
+<section class="section-shell" id="languages">
+<div class="section-heading reveal">
+<p class="eyebrow">Languages</p>
+<h2>Communication and relevant academic coursework.</h2>
+</div>
+<div class="language-layout">
+<article class="language-panel mac-window reveal">
+<div class="window-bar">
+<div aria-hidden="true" class="traffic-lights"><span class="red"></span><span class="amber"></span><span class="green"></span></div>
+<span class="window-title">Communication</span><span class="window-spacer"></span>
+</div>
+<div class="language-body">
+<div><span>Spoken</span><strong>Cantonese, Putonghua, English</strong></div>
+<div><span>Written</span><strong>Chinese, English</strong></div>
+</div>
+</article>
+<article class="language-panel mac-window reveal">
+<div class="window-bar">
+<div aria-hidden="true" class="traffic-lights"><span class="red"></span><span class="amber"></span><span class="green"></span></div>
+<span class="window-title">Certificate</span><span class="window-spacer"></span>
+</div>
+<div class="language-body">
+<h3>Certificate of Proficiency in Putonghua (PSC)</h3>
+<p>Attained in Jun, 2026</p>
+<p>The Hong Kong Polytechnic University and The State Language Commission</p>
+<p><strong>Score / Level: Grade Two, Level A (二級甲等)</strong></p>
+</div>
+</article>
+<article class="language-panel mac-window reveal wide">
+<div class="window-bar">
+<div aria-hidden="true" class="traffic-lights"><span class="red"></span><span class="amber"></span><span class="green"></span></div>
+<span class="window-title">Relevant Academic Coursework (The Hong Kong Polytechnic University)</span><span class="window-spacer"></span>
+</div>
+<div class="language-body">
+<h3>ELC3524 Professional Communication for Computing Students | Grade: A-</h3>
+</div>
+</article>
+</div>
+</section>
+<section class="section-shell" id="awards">
+<div class="section-heading reveal">
+<p class="eyebrow">Awards &amp; Achievements</p>
+<h2>Awards, scholarships and competition recognition.</h2>
+</div>
+<div class="award-grid">
+<article class="award-card reveal award-glow" data-award-rank="1" style="--delay:0ms">
+<div class="award-number">01</div><span class="award-badge">Achievement</span>
+<h3>HKSAR Government Talent Development Scholarship (2025/26)</h3>
+<ul><li>Recipient, Apr 2026</li><li>Issued by: Education Bureau, HKSAR Government</li></ul>
+</article>
+<article class="award-card reveal award-glow award-featured" data-award-rank="2" style="--delay:60ms">
+<div class="award-number">02</div><span class="award-badge">Achievement</span>
+<h3>EDPS Innovation Scholarship 2025–26</h3>
+<ul><li>Scholarship Awardee — One of 20 awardees across Hong Kong, Aug 2026</li><li>2nd Place — Metaverse &amp; Extended Reality (AR, VR &amp; MR) Category</li><li>8th Place Overall</li><li>Issued by: EDPS Systems Limited</li></ul>
+</article>
+<article class="award-card reveal award-glow award-national" data-award-rank="3" style="--delay:120ms">
+<div class="award-number">03</div><span class="award-badge">Achievement</span>
+<h3>Digital &amp; Intelligent Soundscape Competition (20th China Creative Challenges Contest)</h3>
+<ul><li>Third Prize (National Final), Aug 2026</li><li>Issued by: China Higher Education Association &amp; CDEC Organising Committee</li></ul>
+</article>
+<article class="award-card reveal award-glow" data-award-rank="4" style="--delay:180ms">
+<div class="award-number">04</div><span class="award-badge">Achievement</span>
+<h3>Metaverse + AI Contest</h3>
+<ul><li>1st Runner-up, Jul 2026</li><li>Issued by: Pao Yue-kong Library &amp; Department of Computing (COMP), The Hong Kong Polytechnic University</li></ul>
+</article>
+<article class="award-card reveal award-glow" data-award-rank="5" style="--delay:0ms">
+<div class="award-number">05</div><span class="award-badge">Achievement</span>
+<h3>China Collegiate Computing Contest (Mobile Application Innovation Contest 2026)</h3>
+<ul><li>Best Apple Value Prize (Hong Kong Regional Final), Jul 2026</li><li>Issued by: Department of Computing (COMP), The Hong Kong Polytechnic University &amp; Computer Education Research Association of Chinese Universities</li></ul>
+</article>
+<article class="award-card reveal award-glow" data-award-rank="6" style="--delay:60ms">
+<div class="award-number">06</div><span class="award-badge">Achievement</span>
+<h3>16th National E-commerce "Innovation, Creativity and Entrepreneurship" Competition for College Students ("3Chuang")</h3>
+<ul><li>Second Prize (Provincial-Level), Jul 2026</li><li>Second Prize (University-Level), May 2026</li><li>Issued by: National 3Chuang Competition Organizing Committee</li></ul>
+</article>
+<article class="award-card reveal award-glow" data-award-rank="7" style="--delay:120ms">
+<div class="award-number">07</div><span class="award-badge">Achievement</span>
+<h3>PolyU Ideation Funding Scheme (2025/26)</h3>
+<ul><li>Recipient, May 2026</li><li>Issued by: Knowledge Transfer and Entrepreneurship Office (KTEO), The Hong Kong Polytechnic University</li></ul>
+</article>
+<article class="award-card reveal award-glow award-national" data-award-rank="8" style="--delay:180ms">
+<div class="award-number">08</div><span class="award-badge">Achievement</span>
+<h3>China Collegiate Computing Contest (Mobile Application Innovation Contest 2025)</h3>
+<ul><li>Champion (Hong Kong Regional Final), Jul 2025</li><li>Second Prize (National Final), Nov 2025</li><li>Issued by: The Hong Kong Polytechnic University Department of Computing (PolyU COMP) &amp; iOS Club (Hong Kong Regional Final) / Computer Education Research Association of Chinese Universities (National Final)</li></ul>
+<a class="content-link text-link" href="https://kelvinli24.github.io/memospaceweb/" rel="noopener" target="_blank">Related website ↗</a>
+</article>
+<article class="award-card reveal award-glow" data-award-rank="9" style="--delay:0ms">
+<div class="award-number">09</div><span class="award-badge">Achievement</span>
+<h3>Open Data Hackathon 2025</h3>
+<ul><li>Best Innovation Award — Tertiary Stream, Feb 2026</li><li>Issued by: HKtag — Hong Kong Technology Advancement Group</li></ul>
+</article>
+<article class="award-card reveal award-glow" data-award-rank="10" style="--delay:60ms">
+<div class="award-number">10</div><span class="award-badge">Achievement</span>
+<h3>HKGCC Business Case Competition 2025/26</h3>
+<ul><li>2nd Runner-up — Towngas Track, Mar 2026</li><li>Issued by: HKGCC — Hong Kong General Chamber of Commerce</li></ul>
+</article>
+<article class="award-card reveal award-glow" data-award-rank="11" style="--delay:120ms">
+<div class="award-number">11</div><span class="award-badge">Achievement</span>
+<h3>Global Game Jam 2026</h3>
+<ul><li>Certificate of Participation, Jan - Feb 2026</li><li>Issued by: GGJHK Committee</li></ul>
+</article>
+<article class="award-card reveal award-glow" data-award-rank="12" style="--delay:180ms">
+<div class="award-number">12</div><span class="award-badge">Achievement</span>
+<h3>IoT Data Hackathon 2025</h3>
+<ul><li>Certificate of Participation, Apr 2025</li><li>Issued by: GS1 Hong Kong</li></ul>
+</article>
+</div>
+</section>
+<section class="section-shell" id="qualifications">
 <div class="section-heading reveal">
 <p class="eyebrow">Professional Qualifications</p>
 <h2>Cloud, networking, security and aviation-related credentials.</h2>
 </div>
 <div class="qualification-grid">
-<article class="qualification-card reveal delay-1">
-<h3><a href="https://www.credly.com/badges/817fd1da-7b7f-4ccc-a6e6-e694f1ade629/public_url" rel="noopener" target="_blank">AWS Academy Graduate - AWS Academy Cloud Architecting</a></h3>
-<p>AWS · Attained in May 2024</p>
-</article>
-<article class="qualification-card reveal delay-2">
-<h3><a href="https://www.credly.com/badges/f820182d-c54e-4b95-8952-322698f37a26/public_url" rel="noopener" target="_blank">AWS Academy Graduate - AWS Academy Cloud Foundations</a></h3>
-<p>AWS · Attained in May 2024</p>
-</article>
-<article class="qualification-card reveal delay-3">
-<h3><a href="https://www.credly.com/badges/18cd0261-55a2-4cda-9cc4-c14db1d11e30/public_url" rel="noopener" target="_blank">CCNAv7: Introduction to Networks</a></h3>
-<p>Cisco · Attained in Jan 2023 · Merit</p>
-</article>
-<article class="qualification-card reveal delay-4">
-<h3><a href="https://www.credly.com/badges/d7d909f2-f648-435f-91b8-8cb29baf4d22/public_url" rel="noopener" target="_blank">CCNAv7: Switching, Routing, and Wireless Essentials</a></h3>
-<p>Cisco · Attained in May 2023 · Merit</p>
-</article>
-<article class="qualification-card reveal delay-1">
-<h3><a href="https://www.credly.com/badges/07cd4c4e-5e40-4a1f-88af-1771b9b79e70/public_url" rel="noopener" target="_blank">CCNAv7: Enterprise Networking, Security, and Automation</a></h3>
-<p>Cisco · Attained in May 2023 · Merit</p>
-</article>
-<article class="qualification-card reveal delay-2">
-<h3><a href="https://www.credly.com/badges/5f519469-22da-4e1d-b776-deb885923084/public_url" rel="noopener" target="_blank">Network Security</a></h3>
-<p>Cisco · Attained in May 2024 · Merit</p>
-</article>
-<article class="qualification-card reveal delay-3">
-<h3><a href="https://www.credly.com/badges/629c7563-2a4f-425c-8163-b89fe178e381/public_url" rel="noopener" target="_blank">Ethical Hacker</a></h3>
-<p>Cisco · Attained in Dec 2024</p>
-</article>
-<article class="qualification-card reveal delay-4">
-<h3>IoT Fundamentals: IoT Security (Cisco)</h3>
-<p>Attained in Jan 2024</p>
-</article>
-<article class="qualification-card reveal delay-1">
-<h3>Remote Pilot Certificate</h3>
-<p>Attained in Nov 2024</p>
-</article>
+<article class="qualification-card reveal"><div class="credential-dot"></div><h3><a class="content-link" href="https://www.credly.com/badges/817fd1da-7b7f-4ccc-a6e6-e694f1ade629/public_url" rel="noopener" target="_blank">AWS Academy Graduate - AWS Academy Cloud Architecting</a></h3><p>Attained in May, 2024 | AWS</p></article><article class="qualification-card reveal"><div class="credential-dot"></div><h3><a class="content-link" href="https://www.credly.com/badges/18cd0261-55a2-4cda-9cc4-c14db1d11e30/public_url" rel="noopener" target="_blank">CCNAv7: Introduction to Networks</a></h3><p>Attained in Jan, 2023 | Cisco · Score / Level: Merit</p></article><article class="qualification-card reveal"><div class="credential-dot"></div><h3><a class="content-link" href="https://www.credly.com/badges/f820182d-c54e-4b95-8952-322698f37a26/public_url" rel="noopener" target="_blank">AWS Academy Graduate - AWS Academy Cloud Foundations</a></h3><p>Attained in May, 2024 | AWS</p></article><article class="qualification-card reveal"><div class="credential-dot"></div><h3><a class="content-link" href="https://www.credly.com/badges/5f519469-22da-4e1d-b776-deb885923084/public_url" rel="noopener" target="_blank">Network Security</a></h3><p>Attained in May, 2024 | Cisco · Score / Level: Merit</p></article><article class="qualification-card reveal"><div class="credential-dot"></div><h3><a class="content-link" href="https://www.credly.com/badges/629c7563-2a4f-425c-8163-b89fe178e381/public_url" rel="noopener" target="_blank">Ethical Hacker</a></h3><p>Attained in Dec, 2024 | Cisco</p></article><article class="qualification-card reveal"><div class="credential-dot"></div><h3><a class="content-link" href="https://www.credly.com/badges/d7d909f2-f648-435f-91b8-8cb29baf4d22/public_url" rel="noopener" target="_blank">CCNAv7: Switching, Routing, and Wireless Essentials</a></h3><p>Attained in May, 2023 | Cisco · Score / Level: Merit</p></article><article class="qualification-card reveal"><div class="credential-dot"></div><h3>IoT Fundamentals: IoT Security</h3><p>Attained in Jan, 2024 | Cisco</p></article><article class="qualification-card reveal"><div class="credential-dot"></div><h3><a class="content-link" href="https://www.credly.com/badges/07cd4c4e-5e40-4a1f-88af-1771b9b79e70/public_url" rel="noopener" target="_blank">CCNAv7: Enterprise Networking, Security, and Automation</a></h3><p>Attained in May, 2023 | Cisco · Score / Level: Merit</p></article><article class="qualification-card reveal"><div class="credential-dot"></div><h3>Remote Pilot Certificate</h3><p>Attained in Nov, 2024</p></article>
 </div>
 </section>
-
-<section class="section-padding contact-section" id="contact">
-<div class="glass-panel contact-card reveal">
-<p class="eyebrow">Contact</p>
-<h2>Let's build something intelligent, secure and unforgettable.</h2>
-<p class="muted">Open to AI, cybersecurity, Swift/iOS, software engineering, cloud, XR and full-stack opportunities.</p>
-<div class="contact-actions">
-<a class="btn btn-primary magnetic" href="https://www.linkedin.com/in/kelvin-kt-li/" rel="noopener" target="_blank">LinkedIn</a>
+<section class="section-shell" id="extracurricular">
+<div class="section-heading reveal">
+<p class="eyebrow">Extracurricular Activities</p>
+<h2>Additional learning experiences at The Hong Kong Polytechnic University.</h2>
 </div>
+<div class="activity-grid">
+<article class="activity-card reveal"><span>Sep, 2024 - Oct, 2024</span><h3>Unmanned Aerial System (UAS) - Practical Flying Techniques</h3></article><article class="activity-card reveal"><span>Feb, 2025 - Apr, 2025</span><h3>"The Numbers Game, Ready to go Japan" Japanese – Beginners Level</h3></article><article class="activity-card reveal"><span>Jun, 2025 - Jul, 2025</span><h3>Fun-learning Korean - Elementary Level</h3></article><article class="activity-card reveal"><span>Oct, 2025 - Nov, 2025</span><h3>Starry Sky in Hong Kong</h3></article><article class="activity-card reveal"><span>Feb, 2026 - Mar, 2026</span><h3>Japanese Intermediate Level: Adjectives for Life, Ready to Go to Japan</h3></article>
+</div>
+</section>
+<section class="section-shell contact-section" id="contact">
+<div class="contact-window mac-window reveal">
+<div class="window-bar">
+<div aria-hidden="true" class="traffic-lights"><span class="red"></span><span class="amber"></span><span class="green"></span></div>
+<span class="window-title">Contact</span><span class="window-spacer"></span>
+</div>
+<div class="contact-body">
+<p class="eyebrow">Portfolio</p>
+<h2>Connect with Kelvin Li.</h2>
+<p>For professional enquiries, collaboration and project updates, reach me by email or LinkedIn.</p>
+<div class="contact-actions">
+<a aria-label="Email Kelvin Li at kelvinli.kt@gmail.com" class="contact-method-card contact-email-card magnetic" href="mailto:kelvinli.kt@gmail.com">
+<span aria-hidden="true" class="contact-method-icon">
+<svg viewbox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"></path><path d="m22 7-10 6L2 7"></path></svg>
+</span>
+<span class="contact-method-copy"><small>Email</small><strong>Email Kelvin Li</strong><em>kelvinli.kt@gmail.com</em></span>
+<span aria-hidden="true" class="contact-method-arrow">↗</span>
+</a>
+<a class="contact-method-card contact-linkedin-card magnetic" href="https://www.linkedin.com/in/kelvin-kt-li/" rel="noopener" target="_blank">
+<span aria-hidden="true" class="contact-method-icon contact-linkedin-icon">in</span>
+<span class="contact-method-copy"><small>LinkedIn</small><strong>LinkedIn Profile</strong><em>Kelvin Li</em></span>
+<span aria-hidden="true" class="contact-method-arrow">↗</span>
+</a>
+<button aria-label="Copy Kelvin Li email address" class="contact-method-card contact-copy-email-card magnetic" type="button">
+<span aria-hidden="true" class="contact-method-icon contact-copy-email-icon">
+<svg viewbox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg>
+</span>
+<span aria-live="polite" class="contact-method-copy"><small>Quick action</small><strong>Copy email address</strong><em>kelvinli.kt@gmail.com</em></span>
+<span aria-hidden="true" class="contact-method-arrow contact-copy-indicator">⌘C</span>
+</button>
+</div></div>
 </div>
 </section>
 </main>
-<footer class="site-footer">
-<p>© 2026 Kelvin Li.</p>
-</footer>
-<button aria-label="Back to top" class="back-to-top">↑</button>
-<script src="script.js"></script>
+<footer class="site-footer"><p>© 2026 Kelvin Li.</p></footer>
+<button aria-label="Back to top" class="back-to-top" type="button">↑</button>
+<div aria-hidden="true" class="post-window-backdrop" hidden=""></div>
+<div aria-hidden="true" aria-labelledby="share-sheet-title" aria-modal="true" class="share-sheet modal-layer" hidden="" role="dialog"><div class="share-sheet-panel mac-window modal-window"><div class="window-bar modal-window-bar"><div class="traffic-lights modal-traffic-lights"><button aria-label="Close share window" class="window-control red modal-window-control" data-modal-action="close" type="button"></button><button aria-label="Close share window" class="window-control amber modal-window-control" data-modal-action="minimize" type="button"></button><button aria-label="Toggle share window size" class="window-control green modal-window-control" data-modal-action="zoom" type="button"></button></div><span class="window-title" id="share-sheet-title">Share</span><span class="window-spacer"></span></div><div class="share-sheet-body"><p aria-live="polite" class="share-post-title"></p><div class="share-section-heading"><strong>Contact</strong><span>Choose a contact method</span></div><div class="share-contact-row"><a class="share-contact-card share-email" href="mailto:kelvinli.kt@gmail.com"><span class="share-contact-icon">@</span><strong>Email</strong><small>kelvinli.kt@gmail.com</small></a><a class="share-contact-card share-linkedin" href="https://www.linkedin.com/in/kelvin-kt-li/" rel="noopener" target="_blank"><span class="share-contact-icon">in</span><strong>LinkedIn</strong><small>Kelvin Li</small></a></div><div class="share-sheet-actions"><button class="share-copy-email" type="button"><span class="share-action-icon">@</span><span><strong>Copy email address</strong><small>kelvinli.kt@gmail.com</small></span></button><button class="share-copy-link" type="button"><span class="share-action-icon">↗</span><span><strong>Copy post link</strong><small>Copy a direct link to this post</small></span></button></div></div></div></div><div aria-hidden="true" aria-label="Image viewer" aria-modal="true" class="lightbox modal-layer" hidden="" role="dialog"><div class="lightbox-panel mac-window modal-window"><div class="window-bar modal-window-bar"><div class="traffic-lights modal-traffic-lights"><button aria-label="Close image viewer" class="window-control red modal-window-control" data-modal-action="close" type="button"></button><button aria-label="Close image viewer" class="window-control amber modal-window-control" data-modal-action="minimize" type="button"></button><button aria-label="Toggle image viewer size" class="window-control green modal-window-control" data-modal-action="zoom" type="button"></button></div><span class="window-title lightbox-window-title">Photo</span><span class="window-spacer"></span></div><div class="lightbox-body"><button aria-label="Previous image" class="lightbox-nav lightbox-prev" type="button">‹</button><img alt=""/><button aria-label="Next image" class="lightbox-nav lightbox-next" type="button">›</button><div class="lightbox-caption"></div></div></div></div><div aria-hidden="true" aria-labelledby="more-sheet-title" aria-modal="true" class="more-sheet modal-layer" hidden="" role="dialog"><div class="more-sheet-panel mac-window modal-window"><div class="window-bar modal-window-bar"><div class="traffic-lights modal-traffic-lights"><button aria-label="Close post actions" class="window-control red modal-window-control" data-modal-action="close" type="button"></button><button aria-label="Close post actions" class="window-control amber modal-window-control" data-modal-action="minimize" type="button"></button><button aria-label="Toggle post actions size" class="window-control green modal-window-control" data-modal-action="zoom" type="button"></button></div><span class="window-title" id="more-sheet-title">Post actions</span><span class="window-spacer"></span></div><div class="more-sheet-body"><p class="more-post-title"></p><div class="more-action-list"><button class="more-open-post" type="button">Open this post</button><button class="more-copy-link" type="button">Copy post link</button></div></div></div></div><div aria-live="polite" class="toast" role="status"><span class="toast-dot"></span><span class="toast-message"></span></div><script src="script.js"></script>
 </body>
 </html>
