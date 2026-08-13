@@ -23,6 +23,21 @@
       .forEach(({ post }) => feed.appendChild(post));
   });
 
+  // Newspaper source logos use JPG files from assets/logos. Keep the existing
+  // text marks as graceful fallbacks until the user adds each logo file.
+  $$('.coverage-source-logo').forEach((logo) => {
+    const image = $('img', logo);
+    if (!image) return;
+    const syncLogoState = () => {
+      const loaded = image.complete && image.naturalWidth > 0;
+      logo.classList.toggle('logo-loaded', loaded);
+      logo.classList.toggle('logo-missing', !loaded);
+    };
+    image.addEventListener('load', syncLogoState, { once:true });
+    image.addEventListener('error', syncLogoState, { once:true });
+    if (image.complete) syncLogoState();
+  });
+
   // Reveal animation.
   const revealItems = $$('.reveal');
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
