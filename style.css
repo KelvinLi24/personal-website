@@ -3618,3 +3618,56 @@ a.journey-stop:hover .journey-arrow { transform:translate(2px,-2px); }
   }
 }
 
+
+/* ===== v24: keep expanded Newspaper windows rounded like every other macOS window ===== */
+.coverage-window-card.post-expanded {
+  /* Match the standard expanded macOS window radius instead of the smaller
+     catalogue-card radius. Keep the scroll container itself rounded. */
+  border-radius: var(--radius) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  background-clip: padding-box;
+  isolation: isolate;
+}
+
+/* The sticky title bar and the final content surface explicitly follow the
+   outer radius so native scroll compositing cannot visually square the corners. */
+.coverage-window-card.post-expanded > .coverage-window-bar {
+  border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0;
+}
+.coverage-window-card.post-expanded > .coverage-window-body:last-child {
+  border-radius: 0 0 calc(var(--radius) - 1px) calc(var(--radius) - 1px);
+}
+
+/* Keep the browser scrollbar from painting an opaque rectangular track over
+   the rounded right edge of an expanded Newspaper window. */
+.coverage-window-card.post-expanded {
+  scrollbar-color: rgba(151, 166, 184, .5) transparent;
+  scrollbar-width: thin;
+}
+.coverage-window-card.post-expanded::-webkit-scrollbar {
+  width: 9px;
+  height: 0;
+}
+.coverage-window-card.post-expanded::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: calc(var(--radius) - 7px);
+}
+.coverage-window-card.post-expanded::-webkit-scrollbar-thumb {
+  background: rgba(151, 166, 184, .34);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 999px;
+}
+.coverage-window-card.post-expanded::-webkit-scrollbar-thumb:hover {
+  background: rgba(185, 199, 216, .5);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+@media (max-width: 720px) {
+  .coverage-window-card.post-expanded {
+    /* Expanded windows use the same radius as the rest of the site on mobile. */
+    border-radius: var(--radius) !important;
+  }
+}
